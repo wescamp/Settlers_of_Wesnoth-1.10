@@ -1,0 +1,9 @@
+leader modifying
+improve domestic trade dialog
+
+lua dialogs
+
+nicer terrain substitution
+
+road interupted by settle: implement recalculation, test
+rename images to complex names (conflict with other addons)

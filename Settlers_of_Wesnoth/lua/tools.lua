@@ -1,0 +1,146 @@
+
+sow_tools = {}
+
+function sow_tools.sow_random(arg)
+	assert(type(arg) == "number")
+	local res = math.random(arg)
+	return wesnoth.synchronize_choice(function() return { value = res } end).value
+end
+
+function sow_tools.check_integer(number, allowed_min, allowed_max)
+	number = tonumber(number)
+	if not number then return false end
+	if number < allowed_min then return false end
+	if number > allowed_max then return false end
+	return number == math.floor(number), number
+end
+
+function sow_tools.label(player, y, text)
+	if getmetatable(text) == "translatable string" then text = tostring(text) end
+	local toprint = string.format("<span color='%s'>%s</span>", sow_constants.sow_labels_new.players[player].color, text)
+	local color
+	if toprint:len() > 32 then
+		toprint = string.format("%s", text)
+		color = table.concat(sow_tools.hex2rgb(sow_constants.sow_labels_new.players[player].color), ",")
+	end
+	if toprint:len() > 32 then
+		helper.warning(string.format(tostring(_"placing label %s at (%u,%u) failed due to its length"), toprint, sow_constants.sow_labels_new .players[player].x, y))
+		return
+	end
+	local x = sow_constants.sow_labels_new .players[player].x
+	local w, h = wesnoth.get_map_size()
+	assert(1 <= x and x <= w)
+	assert(1 <= y and y <= h)
+	wml_actions.label({ x = x, y = y, text = toprint, color = color })
+end
+
+function sow_tools.format(...)
+	local args = { ... }
+	for i = 1, #args do
+		local v = args[i]
+		if getmetatable(v) == "translatable string" then args[i] = tostring(v) end
+	end
+	local unpack_func
+	if wesnoth.compare_versions and wesnoth.compare_versions(string.sub(_VERSION, 5), ">=", "5.2") then unpack_func = table.unpack
+	else unpack_func = unpack
+	end
+	return string.format(unpack_func(args))
+end
+
+function sow_tools.hex2rgb(hex)
+	assert(type(hex) == "string" and string.len(hex) == 7)
+	hex = string.sub(hex, 2)
+	local function hexnumber2decimal(s, e)
+		return assert(tonumber(string.sub(hex, s, e), 16), "cannot convert: " .. hex)
+	end
+	local r,g,b = hexnumber2decimal(1,2), hexnumber2decimal(3,4), hexnumber2decimal(5,6)
+	return { r, g, b }
+end
+
+function sow_tools.valid_player_range()
+	local sow_game_stats = wesnoth.get_variable("sow_game_stats")
+	local function f(s)
+		local c
+		local player = false
+		repeat
+			local i = s.i
+			c = sow_game_stats[i]
+			if not c then return end
+			s.i = i + 1
+			player = (c[1] == "player")
+			if player then s.index = s.index + 1 end
+		until player and c[2].valid
+		return c[2], s.index
+	end
+	return f, { i = 1, index = -1 }
+end
+
+function sow_tools.split(string)
+	local result = {}
+	for w in string.gmatch(string, "[^%s,][^,]*") do
+		table.insert(result, w)
+	end
+	return result
+end
+
+function sow_tools.swap_table(table)
+	local result = {}
+	for k, v in pairs(table) do
+		local key_type = type(k)
+		local value_type = type(value)
+		assert(key_type == "nil" or key_type == "boolean" or key_type == "number" or key_type == "string")
+		assert(value_type == "nil" or key_type == "boolean" or key_type == "number" or key_type == "string")
+		result[v] = k
+	end
+	return result
+end
+
+--convert named fields holding a table to {"field_name", table }
+function sow_tools.convert_to_wml_table(arg_table)
+	for k, v in pairs(arg_table) do
+		if type(k) ~= "number" and type(v) == "table" then
+			table.insert(arg_table, {k, sow_tools.convert_to_wml_table(v) })
+			arg_table[k] = nil
+		end
+	end
+	return arg_table
+end
+
+function sow_tools.convert_from_wml_table(arg_table)
+	for k, v in pairs(arg_table) do
+		if type(v) == "table" and type(k) == "number" then
+			arg_table[v[1]] = sow_tools.convert_from_wml_table(v[2])
+			arg_table[k] = nil
+		end
+	end
+	return arg_table
+end
+
+function sow_tools.remove_empty_table_indices(t)
+	local result = {}
+	local last_k = 1
+	for k, v in pairs(t) do
+		assert(type(k) == "number")
+--~ 		assert(last_k < k)
+		last_k = k
+		if v then
+			table.insert(result, v)
+		end
+	end
+	return result
+end
+
+function sow_tools.direction_to_facing(direction)
+	if direction == "nw" then return "ne" end
+	if direction == "ne" then return "nw" end
+	return "se"
+end
+
+function sow_tools.message(cfg)
+	assert(cfg.side_for == nil, "cfg: " .. dbms(cfg, false, "cfg", false, false, true))
+	local message = string.format("%s: %s", tostring(cfg.caption), tostring(cfg.message))
+	message = string.gsub(message, "\n", " ")
+	message = string.gsub(message, "%b<>", "")
+	wesnoth.message(tostring(_"Settlers of Wesnoth"), message)
+end
+
