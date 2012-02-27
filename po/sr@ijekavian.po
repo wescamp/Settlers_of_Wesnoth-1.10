@@ -1,0 +1,498 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: branch 1.10\n"
+"Report-Msgid-Bugs-To: http://bugs.wesnoth.org/\n"
+"POT-Creation-Date: 2012-02-27 13:05+0100\n"
+"PO-Revision-Date: 2012-02-27 13:00+0100\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: sr@ijekavian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#. [era]: id=era_sow
+#: Settlers_of_Wesnoth/_main.cfg:25
+msgid "Settlers of Wesnoth Era"
+msgstr ""
+
+#. [editor_group]: id=sow
+#: Settlers_of_Wesnoth/_main.cfg:39
+msgid "Settlers of Wesnoth"
+msgstr ""
+
+#: Settlers_of_Wesnoth/dist/name_icon_description.cfg:2
+msgid "Settlers of Wesnoth - NO DOWNLOAD NEEDED"
+msgstr ""
+
+#: Settlers_of_Wesnoth/dist/name_icon_description.cfg:4
+msgid ""
+"Place your settlements strategically to collect resources and trade with the "
+"others to develop your colony and be the most thriving settler from Wesnoth "
+"on this newfound island.\n"
+"NEW: If played without 'Settlers of Wesnoth Era', remote clients do not need "
+"to have downloaded this addon. The UI is less comfortable, but the rules are "
+"exactly the same and no OOS or other gamestate errors are supposed to "
+"occur.\n"
+"Requires BfW "
+msgstr ""
+
+#: Settlers_of_Wesnoth/dist/name_icon_description.cfg:6
+msgid " or greater."
+msgstr ""
+
+#. [multiplayer_side]: id=sow_units, type=sow_leader
+#: Settlers_of_Wesnoth/era-sow.cfg:6
+msgid "Settlers of Wesnoth units"
+msgstr ""
+
+#. [message]: speaker=narrator
+#: Settlers_of_Wesnoth/scenarios/sow_scenario.cfg:240
+msgid ""
+"Settlers of Wesnoth is being played without the included era. This "
+"unfortunately means reduced playing comfort for everybody, but allows people "
+"to play this addon without having it downloaded. You may miss images in case "
+"you don't have this addon. I recommend playing Settlers of Wesnoth by "
+"choosing 'Settlers of Wesnoth Era' which ensures full playing comfort, but "
+"requires everyone who wants to be able to join the game to have downloaded "
+"this addon."
+msgstr ""
+
+#. [message]: speaker=narrator
+#: Settlers_of_Wesnoth/scenarios/sow_scenario.cfg:273
+msgid ""
+"Sorry - at least one player's version of Battle for Wesnoth is not recent "
+"enough thus this add-on wouldn't work correctly. Please get BfW "
+msgstr ""
+
+#. [value]: condition=win
+#: Settlers_of_Wesnoth/scenarios/sow_scenario.cfg:321
+msgid ""
+"Be the player who has the most victory points after the end of turn "
+"$sow_game_stats.leading_player.limit"
+msgstr ""
+
+#. [value]: condition=win
+#: Settlers_of_Wesnoth/scenarios/sow_scenario.cfg:330
+msgid "Be the first player to accumulate $sow_game_stats.goal Victory Points"
+msgstr ""
+
+#. [objectives]
+#: Settlers_of_Wesnoth/scenarios/sow_scenario.cfg:337
+msgid "Development your nascent settlement into a thriving colony!"
+msgstr ""
+
+#. [note]
+#: Settlers_of_Wesnoth/scenarios/sow_scenario.cfg:345
+msgid ""
+"<span foreground='red'>Note that this dialog can also be closed by pressing "
+"the Esc or the return key.</span>"
+msgstr ""
+
+#. [message]: speaker=narrator
+#: Settlers_of_Wesnoth/scenarios/sow_scenario.cfg:484
+msgid ""
+"Sorry - the client owning side $side_number|'s version of Settlers of "
+"Wesnoth doesn't match the version the host has, thus this add-on wouldn't "
+"work correctly. Please all get the latest version from the add-ons server."
+msgstr ""
+
+#. [message]: speaker=narrator
+#: Settlers_of_Wesnoth/scenarios/sow_scenario.cfg:756
+msgid "Stolen resources!"
+msgstr ""
+
+#. [message]: speaker=narrator
+#: Settlers_of_Wesnoth/scenarios/sow_scenario.cfg:758
+msgid ""
+"The robber was moved. You have $resources.ressources units of resources (out "
+"of at maximum $halfed_resources) in total - choose what to discard "
+"($units_left left):"
+msgstr ""
+
+#. [option]: speaker=narrator
+#: Settlers_of_Wesnoth/scenarios/sow_scenario.cfg:760
+msgid "($resources.lumber available)"
+msgstr ""
+
+#. [option]: speaker=narrator
+#: Settlers_of_Wesnoth/scenarios/sow_scenario.cfg:760
+msgid "<span weight='bold'>Lumber</span>"
+msgstr ""
+
+#. [option]: speaker=narrator
+#: Settlers_of_Wesnoth/scenarios/sow_scenario.cfg:766
+msgid "<span weight='bold'>Grain</span>"
+msgstr ""
+
+#. [option]: speaker=narrator
+#: Settlers_of_Wesnoth/scenarios/sow_scenario.cfg:766
+msgid "($resources.grain available)"
+msgstr ""
+
+#. [option]: speaker=narrator
+#: Settlers_of_Wesnoth/scenarios/sow_scenario.cfg:772
+msgid "<span weight='bold'>Wool</span>"
+msgstr ""
+
+#. [option]: speaker=narrator
+#: Settlers_of_Wesnoth/scenarios/sow_scenario.cfg:772
+msgid "($resources.wool available)"
+msgstr ""
+
+#. [option]: speaker=narrator
+#: Settlers_of_Wesnoth/scenarios/sow_scenario.cfg:778
+msgid "<span weight='bold'>Brick</span>"
+msgstr ""
+
+#. [option]: speaker=narrator
+#: Settlers_of_Wesnoth/scenarios/sow_scenario.cfg:778
+msgid "($resources.brick available)"
+msgstr ""
+
+#. [option]: speaker=narrator
+#: Settlers_of_Wesnoth/scenarios/sow_scenario.cfg:784
+msgid "<span weight='bold'>Ore</span>"
+msgstr ""
+
+#. [option]: speaker=narrator
+#: Settlers_of_Wesnoth/scenarios/sow_scenario.cfg:784
+msgid "($resources.ore available)"
+msgstr ""
+
+#. [race]: id=sow_units
+#: Settlers_of_Wesnoth/units/_initial.cfg:7
+msgid "SOW units"
+msgstr ""
+
+#. [unit_type]: id=sow_any, race=sow_units
+#: Settlers_of_Wesnoth/units/sow_any.cfg:6
+msgid "Port"
+msgstr ""
+
+#. [unit_type]: id=sow_any, race=sow_units
+#: Settlers_of_Wesnoth/units/sow_any.cfg:17
+msgid ""
+"Ports are vital for any nascent nation's trade. Unspecialized ports allow "
+"the player who controls one to trade three units of the same resource for a "
+"unit of any other resource."
+msgstr ""
+
+#. [unit_type]: id=sow_brick, race=sow_units
+#: Settlers_of_Wesnoth/units/sow_brick.cfg:6
+msgid "Brick Port"
+msgstr ""
+
+#. [unit_type]: id=sow_brick, race=sow_units
+#: Settlers_of_Wesnoth/units/sow_brick.cfg:17
+msgid ""
+"Ports are vital for any nascent nation's trade. Brick ports allows the "
+"player who controls one to trade two units of brick for a unit of any other "
+"resource."
+msgstr ""
+
+#. [unit_type]: id=sow_city, race=sow_units
+#: Settlers_of_Wesnoth/units/sow_city.cfg:6
+msgid "City"
+msgstr ""
+
+#. [unit_type]: id=sow_city, race=sow_units
+#: Settlers_of_Wesnoth/units/sow_city.cfg:17
+msgid ""
+"Cities are the improvement of a settlement: instead of producing one "
+"resource unit when an adjacent hex's number comes out, it will produce two. "
+"Cities are also worth two victory points. Upgrading settlements to cities "
+"costs 2 units of grain and 3 units of ore, and a player can have a maximum "
+"of four cities."
+msgstr ""
+
+#. [unit_type]: id=sow_grain, race=sow_units
+#: Settlers_of_Wesnoth/units/sow_grain.cfg:6
+msgid "Grain Port"
+msgstr ""
+
+#. [unit_type]: id=sow_grain, race=sow_units
+#: Settlers_of_Wesnoth/units/sow_grain.cfg:17
+msgid ""
+"Ports are vital for any nascent nation's trade. Grain ports allows the "
+"player who controls one to trade two units of grain for a unit of any other "
+"resource."
+msgstr ""
+
+#. [unit_type]: id=sow_largest, race=sow_units
+#: Settlers_of_Wesnoth/units/sow_largest.cfg:6
+msgid "Largest Army"
+msgstr ""
+
+#. [unit_type]: id=sow_largest, race=sow_units
+#: Settlers_of_Wesnoth/units/sow_largest.cfg:17
+msgid ""
+"The first player to have used 3 knight cards and the one to have used the "
+"most afterwards gains the largest army award, which is worth 2 victory "
+"points."
+msgstr ""
+
+#. [unit_type]: id=sow_leader, race=sow_units
+#: Settlers_of_Wesnoth/units/sow_leader.cfg:6
+msgid "SOW leader"
+msgstr ""
+
+#. [unit_type]: id=sow_longest, race=sow_units
+#: Settlers_of_Wesnoth/units/sow_longest.cfg:6
+msgid "Longest Road"
+msgstr ""
+
+#. [unit_type]: id=sow_longest, race=sow_units
+#: Settlers_of_Wesnoth/units/sow_longest.cfg:17
+msgid ""
+"The first player to have 5 consecutive road units and the one to have the "
+"most afterwards gains the longest road award, which is worth 2 victory "
+"points."
+msgstr ""
+
+#. [unit_type]: id=sow_lumber, race=sow_units
+#: Settlers_of_Wesnoth/units/sow_lumber.cfg:6
+msgid "Lumber Port"
+msgstr ""
+
+#. [unit_type]: id=sow_lumber, race=sow_units
+#: Settlers_of_Wesnoth/units/sow_lumber.cfg:17
+msgid ""
+"Ports are vital for any nascent nation's trade. Lumber ports allows the "
+"player who controls one to trade two units of lumber for a unit of any other "
+"resource."
+msgstr ""
+
+#. [unit_type]: id=sow_ore, race=sow_units
+#: Settlers_of_Wesnoth/units/sow_ore.cfg:6
+msgid "Ore Port"
+msgstr ""
+
+#. [unit_type]: id=sow_ore, race=sow_units
+#: Settlers_of_Wesnoth/units/sow_ore.cfg:17
+msgid ""
+"Ports are vital for any nascent nation's trade. Ore ports allows the player "
+"who controls one to trade two units of ore for a unit of any other resource."
+msgstr ""
+
+#. [unit_type]: id=sow_roadn, race=sow_units
+#. [unit_type]: id=sow_roadne, race=sow_units
+#. [unit_type]: id=sow_roadnw, race=sow_units
+#: Settlers_of_Wesnoth/units/sow_roadn.cfg:6
+#: Settlers_of_Wesnoth/units/sow_roadne.cfg:7
+#: Settlers_of_Wesnoth/units/sow_roadnw.cfg:6
+msgid "Road"
+msgstr ""
+
+#. [unit_type]: id=sow_roadn, race=sow_units
+#. [unit_type]: id=sow_roadne, race=sow_units
+#. [unit_type]: id=sow_roadnw, race=sow_units
+#: Settlers_of_Wesnoth/units/sow_roadn.cfg:17
+#: Settlers_of_Wesnoth/units/sow_roadne.cfg:18
+#: Settlers_of_Wesnoth/units/sow_roadnw.cfg:17
+msgid ""
+"Roads are necessary to the development of a nation. Indeed, no settlement or "
+"city can exist if it is not linked to by a road. They cost a unit of lumber "
+"and a unit of brick to build and can be placed on any dirt spot. The first "
+"player to build a 5 road unit long road will earn two victory points, until "
+"somebody else builds a longer one. A player can have a maximum of 15 road "
+"units."
+msgstr ""
+
+#. [unit_type]: id=sow_robber, race=sow_units
+#: Settlers_of_Wesnoth/units/sow_robber.cfg:6
+msgid "Robber"
+msgstr ""
+
+#. [unit_type]: id=sow_robber, race=sow_units
+#: Settlers_of_Wesnoth/units/sow_robber.cfg:17
+msgid ""
+"The robber prevents the resource hex it is placed upon to produce resources "
+"should its number come out. When moved to a new spot, it will allow the "
+"player who moved him to steal one random resource from an adjacent "
+"settlement or city. If there are more than one, the player chooses which one "
+"to steal from. Also, when it is moved, any player who has more than 7 "
+"resource units chooses half of them, rounded down, to discard. The robber "
+"will always start the game in the desert. If the player who activates the "
+"robber fails to move it before the end of his turn, the robber will be moved "
+"randomly, and the player not steal from an adjacent settlement or city."
+msgstr ""
+
+#. [unit_type]: id=sow_settle, race=sow_units
+#: Settlers_of_Wesnoth/units/sow_settle.cfg:6
+msgid "Settlement"
+msgstr ""
+
+#. [unit_type]: id=sow_settle, race=sow_units
+#: Settlers_of_Wesnoth/units/sow_settle.cfg:17
+msgid ""
+"Settlements are the base of any nation. Each time an adjacent resource hex's "
+"number comes out, it will produce a unit of that resource for its player. "
+"Settlements must be built next to roads, and only on a resource hex's "
+"corner. No two settlements can be built on adjacent corners. They cost a "
+"unit of wool, a unit of grain, a unit of brick and a unit of lumber to build "
+"and are worth a single victory points. A player can control a maximum of 6 "
+"settlements at any time."
+msgstr ""
+
+#. [unit_type]: id=sow_wool, race=sow_units
+#: Settlers_of_Wesnoth/units/sow_wool.cfg:6
+msgid "Wool Port"
+msgstr ""
+
+#. [unit_type]: id=sow_wool, race=sow_units
+#: Settlers_of_Wesnoth/units/sow_wool.cfg:17
+msgid ""
+"Ports are vital for any nascent nation's trade. Wool ports allows the player "
+"who controls one to trade two units of wool for a unit of any other resource."
+msgstr ""
+
+#. [set_menu_item]: id=execute_lua
+#: Settlers_of_Wesnoth/utils/sow_debug.cfg:20
+msgid "execute lua"
+msgstr ""
+
+#. [set_menu_item]: id=execute_lua_no_reload
+#: Settlers_of_Wesnoth/utils/sow_debug.cfg:43
+msgid "execute lua (no reload)"
+msgstr ""
+
+#. [set_menu_item]: id=quick_unit_debug
+#: Settlers_of_Wesnoth/utils/sow_debug.cfg:71
+msgid "Quick Unit Debug"
+msgstr ""
+
+#: Settlers_of_Wesnoth/utils/sow_help.cfg:4
+msgid "SETTLERS OF WESNOTH: RULES"
+msgstr ""
+
+#: Settlers_of_Wesnoth/utils/sow_help.cfg:8
+msgid ""
+"Here is a comprehensive rule set for the Settlers of Wesnoth add-on. Please "
+"read this if this is your first time playing, especially if you are not "
+"player one: you will have some time to read 'till your turn comes up. You "
+"can access this menu anytime on your turn through the right-click context "
+"menu and also through the scenario objectives while it is not your turn."
+msgstr ""
+
+#. [set_menu_item]: id=sow_menu_help
+#: Settlers_of_Wesnoth/utils/sow_menus.cfg:20
+msgid "Help/Rules"
+msgstr ""
+
+#. [set_menu_item]: id=sow_menu_trade
+#: Settlers_of_Wesnoth/utils/sow_menus.cfg:39
+msgid "Trade"
+msgstr ""
+
+#. [set_menu_item]: id=sow_menu_dev
+#: Settlers_of_Wesnoth/utils/sow_menus.cfg:68
+msgid "Development Cards"
+msgstr ""
+
+#. [set_menu_item]: id=sow_menu_build_first_settle
+#: Settlers_of_Wesnoth/utils/sow_menus.cfg:115
+msgid "Build First Settlement"
+msgstr ""
+
+#. [set_menu_item]: id=sow_menu_build_second_settle
+#: Settlers_of_Wesnoth/utils/sow_menus.cfg:178
+msgid "Build Second Settlement"
+msgstr ""
+
+#. [set_menu_item]: id=sow_menu_build_first_road
+#: Settlers_of_Wesnoth/utils/sow_menus.cfg:239
+msgid "Build First Road"
+msgstr ""
+
+#. [set_menu_item]: id=sow_menu_build_second_road
+#: Settlers_of_Wesnoth/utils/sow_menus.cfg:326
+msgid "Build Second Road"
+msgstr ""
+
+#. [set_menu_item]: id=sow_menu_build_settle
+#: Settlers_of_Wesnoth/utils/sow_menus.cfg:408
+msgid "Build Settlement(L, G, W, B)"
+msgstr ""
+
+#. [set_menu_item]: id=sow_menu_build_city
+#: Settlers_of_Wesnoth/utils/sow_menus.cfg:501
+msgid "Improve to city (2 G, 3 O)"
+msgstr ""
+
+#. [set_menu_item]: id=sow_menu_build_road
+#: Settlers_of_Wesnoth/utils/sow_menus.cfg:568
+msgid "Build Road (L, B)"
+msgstr ""
+
+#. [set_menu_item]: id=sow_menu_robber
+#: Settlers_of_Wesnoth/utils/sow_menus.cfg:675
+msgid "Move Robber Here"
+msgstr ""
+
+#. [terrain_type]: id=dirt_road_n
+#: Settlers_of_Wesnoth/utils/sow_terrains.cfg:19
+msgid "Dirt Road N"
+msgstr ""
+
+#. [terrain_type]: id=dirt_road_ne
+#: Settlers_of_Wesnoth/utils/sow_terrains.cfg:28
+msgid "Dirt Road NE"
+msgstr ""
+
+#. [terrain_type]: id=dirt_road_nw
+#: Settlers_of_Wesnoth/utils/sow_terrains.cfg:37
+msgid "Dirt Road NW"
+msgstr ""
+
+#. [terrain_type]: id=sow_two
+#: Settlers_of_Wesnoth/utils/sow_terrains.cfg:47
+msgid "Two"
+msgstr ""
+
+#. [terrain_type]: id=sow_three
+#: Settlers_of_Wesnoth/utils/sow_terrains.cfg:57
+msgid "Three"
+msgstr ""
+
+#. [terrain_type]: id=sow_four
+#: Settlers_of_Wesnoth/utils/sow_terrains.cfg:67
+msgid "Four"
+msgstr ""
+
+#. [terrain_type]: id=sow_five
+#: Settlers_of_Wesnoth/utils/sow_terrains.cfg:77
+msgid "Five"
+msgstr ""
+
+#. [terrain_type]: id=sow_six
+#: Settlers_of_Wesnoth/utils/sow_terrains.cfg:87
+msgid "Six"
+msgstr ""
+
+#. [terrain_type]: id=sow_eight
+#: Settlers_of_Wesnoth/utils/sow_terrains.cfg:97
+msgid "Eight"
+msgstr ""
+
+#. [terrain_type]: id=sow_nine
+#: Settlers_of_Wesnoth/utils/sow_terrains.cfg:107
+msgid "Nine"
+msgstr ""
+
+#. [terrain_type]: id=sow_ten
+#: Settlers_of_Wesnoth/utils/sow_terrains.cfg:117
+msgid "Ten"
+msgstr ""
+
+#. [terrain_type]: id=sow_eleven
+#: Settlers_of_Wesnoth/utils/sow_terrains.cfg:127
+msgid "Eleven"
+msgstr ""
+
+#. [terrain_type]: id=sow_twelve
+#: Settlers_of_Wesnoth/utils/sow_terrains.cfg:137
+msgid "Twelve"
+msgstr ""
