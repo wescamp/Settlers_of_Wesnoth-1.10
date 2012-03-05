@@ -1,7 +1,6 @@
-leader modifying
-improve domestic trade dialog
-
-lua dialogs
+additional bells when trading
+robber halfing dialog
+gets/keeps longest road
 
 nicer terrain substitution
 

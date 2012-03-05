@@ -47,8 +47,7 @@ end
 
 local load_string = "~add-ons/Settlers_of_Wesnoth/lua/"
 wml_actions = wesnoth.wml_actions
-_ = wesnoth.textdomain("wesnoth-Settlers_of_Wesnoth")
--- #textdomain wesnoth-Settlers_of_Wesnoth
+local _ = wesnoth.textdomain("wesnoth-Settlers_of_Wesnoth")
 
 local loaded, debug_utils = pcall(wesnoth.dofile, "~add-ons/Wesnoth_Lua_Pack/debug_utils.lua")
 dbms = debug_utils.dbms or function() return "" end
@@ -60,6 +59,7 @@ if sow_era_is_used then
 	wesnoth.dofile(load_string .. "tools.lua")
 	wesnoth.dofile(load_string .. "sow-wml-tags.lua")
 	wesnoth.dofile(load_string .. "dialogs.lua")
+	wesnoth.dofile(load_string .. "image.lua")
 
 	sow_put_unit = wesnoth.put_unit
 	function sow_tools.custom_terrain_to_core(t) return t end
@@ -167,11 +167,7 @@ local function get_input_integer(default, allowed_min, allowed_max, side_for)
 	local input_integer = default
 	while first or not sow_tools.check_integer(input_integer, allowed_min, allowed_max) do
 		if not first then wml_actions.message({ side_for = side_for, speaker = "narrator", image = "wesnoth-icon.png",
-				message = string.format("%s %i %s %i.",
-				tostring(_"Invalid input! Allowed are integer numbers between"),
-				allowed_min,
-				tostring(_"and"),
-				allowed_max) })
+				message = string.format(tostring(_"Invalid input! Allowed are integer numbers between %i and %i"), allowed_min, allowed_max) })
 		end
 		first = false
 		wml_actions.message({ speaker = "narrator", image = "wesnoth-icon.png", message =  _"How much ?",
@@ -220,9 +216,9 @@ end
 
 --can be called from right-click menu when in debug-mode for insta-testing lua stuff (reloads this file previously too)
 function sow_main()
--- 	sow_ressource_manager(1, { lumber = 100, grain = 100, wool = 100, brick = 100, ore = 100 })
--- 	sow_ressource_manager(2, { lumber = 100, grain = 100, wool = 100, brick = 100, ore = 100 })
---  	sow_ressource_manager(3, { lumber = 100, grain = 100, wool = 100, brick = 100, ore = 100 })
+	sow_ressource_manager(1, { lumber = 100, grain = 100, wool = 100, brick = 100, ore = 100 })
+	sow_ressource_manager(2, { lumber = 100, grain = 100, wool = 100, brick = 100, ore = 100 })
+ 	sow_ressource_manager(3, { lumber = 100, grain = 100, wool = 100, brick = 100, ore = 100 })
 
 --~ 	for player, side_number in sow_tools.valid_player_range() do
 --~ 		local development = helper.get_child(player, "development")
@@ -234,20 +230,55 @@ function sow_main()
 --~ 		wesnoth.set_variable(sow_tools.format("sow_game_stats.player[%u].development", side_number), development)
 --~ 	end
 --~ 	update_displayed_numericals()
---~ 	wml_actions.kill({})
 
-	local side_numbers = {}
-	for team, side_number in sow_tools.valid_player_range() do
-		if side_number ~= wesnoth.current.side then
-			table.insert(side_numbers, side_number)
-		end
-	end
--- 	dbms(side_numbers)
-	local result = sow_dialogs.get_sides(side_numbers)
-	dbms(result)
+-- 	sdbms(sow_dialogs.confirm(_"Your offer/demand arrangement doesn't seem ready yet, do you really want to continue ?"))
+-- 	local result = sow_dialogs.domestic_trade({ lumber = 1, grain = 3, wool = 2, brick = 1, ore = 0, resources = 7 }, { lumber = 0, grain = 0, wool = 0, brick = 0, ore = 0, resources = 0 }, "1,2,3")
+-- 	dbms(result)
+
+-- 	wml_actions.message({ message = "normal <b>bold </b><big>bigger <big>even bigger <span size = 'large'>large <span color = 'green'>large and green </span></span></big></big>" })
+
+-- 	wml_actions.objectives({ note =  _"normal <b>bold </b><big>bigger <big>even bigger <span size = 'large'>large <span color = 'green'>large and green </span></span></big></big>" })
+-- 	wml_actions.modify_unit({ {"filter", { x = 11, y = 4 }}, name = _"normal <b>bold </b><big>bigger <big>even bigger <span size = 'large'>large <span color = 'green'>large and green </span></span></big></big>" })
+
+-- 	wml_actions.modify_side({ side = 5, controller = "ai" })
+
+-- 	wesnoth.fire_event("sow_set_sow_help")
+-- 	local help = wesnoth.get_variable("sow_help[1]")
+-- 	wml_actions.message({ speaker = "narrator", message = help.text })
+
+-- 	wml_actions.remove_item({})
+-- 	local image = sow_image.create("wesnoth-icon.png")
+-- 	image = image:scale(72):blit(sow_image.create("units/trolls/grunt.png"):scale(73))
+-- 	image = sow_image.create("terrain/village/human-city.png")
+-- 	image = image:tc_shift(9)
+--  	image:item(9, 5)
+
+	sow_activate_robber(1)
 end
 
 -----------------------------------------------------------------------------------
+
+function sow_manage_leaders()
+	local title = wesnoth.get_variable("sow_help[0].title")
+	for i in ipairs(wesnoth.sides) do
+		local loc = wesnoth.get_starting_location(i)
+		local original_leader = wesnoth.get_unit(loc[1], loc[2])
+		local player
+		if original_leader then
+			player = original_leader.name
+		end
+		wesnoth.put_unit(loc[1], loc[2])
+		local text = ""
+		local max_i = wesnoth.get_variable("sow_help.length") - 1
+		if i == 9 then
+			text = wesnoth.get_variable("sow_help[0].text")
+		elseif i <= max_i then
+			text = wesnoth.get_variable(string.format("sow_help[%u].text", i))
+		end
+		local description = string.format("<small>%s\n%s</small>", tostring(title), tostring(text))
+		sow_put_unit(loc[1], loc[2], { type = "sow_leader", facing = "se", canrecruit = true, side = i, name = player, description = description })
+	end
+end
 
 -- Function to randomly generate map at game turn 1
 
@@ -277,19 +308,20 @@ function sow_mapgen()
 				-- Placing labels & icons
 				sow_tools.label(i, sow_constants.sow_labels_new.name, sow_constants.sow_labels_new.players[i].name)
 				local function overlay(key)
-					wml_actions.item({ x = sow_constants.sow_labels_new.players[i].x, y = sow_constants.sow_labels_new.resources[key], image = sow_tools.custom_image_to_core(string.format("items/%s.png", key)) })
+					local image = sow_image.create(sow_tools.custom_image_to_core(string.format("items/%s.png", key)))
+					if not sow_era_is_used then
+						image = sow_image.create("misc/blank-hex.png"):blit(image:scale(40))
+					end
+					image:item(sow_constants.sow_labels_new.players[i].x, sow_constants.sow_labels_new.resources[key])
 				end
-				if sow_era_is_used then
-					overlay("lumber")
-					overlay("grain")
-					overlay("wool")
-					overlay("brick")
-					overlay("ore")
-				end
+				overlay("lumber")
+				overlay("grain")
+				overlay("wool")
+				overlay("brick")
+				overlay("ore")
 			else
 				table.insert(game_stats, {"player", { valid = false }})
 -- 				sow_data.player[i] = helper.shallow_copy({ valid = false })
-				sow_put_unit(sow_constants.sow_labels_new.players[i].x, sow_constants.sow_labels_new.name)
 			end
 		else
 			--i == 9 here
@@ -729,12 +761,18 @@ local function sow_end_robber(choosing_turn)
 	local target_resources = { target_sides = {} }
 	local choices = {}
 	for index, target in ipairs(targets) do
-		local image_string = sow_tools.custom_image_to_core("units/settle.png") .. "~TC(%u,magenta)"
-		if target.type == "sow_city" or target.variables.type == "sow_city" then image_string = sow_tools.custom_image_to_core("units/city.png") .. "~TC(%u,magenta)" end
+		local image
+		if sow_era_is_used then
+			image = sow_image.create(target.__cfg.image)
+			image = image:tc(target.side)
+		else
+			image = sow_image.create(target.variables.image)
+			image = image:tc_shift(target.side)
+		end
 		if not target_resources[target.side] then
 			table.insert(target_resources, target.side, wesnoth.get_variable(string.format("sow_game_stats.player[%u].ressources", target.side)))
 			table.insert(target_resources.target_sides, target.side)
-			table.insert(choices, sow_tools.format("&%s=<span weight='bold'>%s</span> (%u %s)", string.format(image_string, target.side), tostring(sow_constants.sow_labels_new.players[target.side].name), target_resources[target.side].ressources, _"resources left"))
+			table.insert(choices, sow_tools.format("&%s=<span weight='bold'>%s</span> (%u %s)", image.image, tostring(sow_constants.sow_labels_new.players[target.side].name), target_resources[target.side].ressources, _"resources left"))
 		end
 	end
 	local choice = 1; if target_resources.target_sides[2] then choice = helper.get_user_choice(settings, choices) end
@@ -774,6 +812,7 @@ function sow_half_resources(side_number)
 		local halfed_resources = math.ceil(resources.ressources / 2.0)
 		local res_to_lose = resources.ressources - halfed_resources
 		wml_actions.print({ text = string.format("<span color='%s'>%s %s %s %u %s!</span>", sow_constants.sow_labels_new.players[side_number].color, tostring(_"Too many resources!"), tostring(sow_constants.sow_labels_new.players[side_number].name), tostring(_"lost"), res_to_lose, tostring(_"units of resources")), size=34, duration = 700 })
+		wesnoth.synchronize_choice(function() wesnoth.play_sound("bell.wav") end)
 		while resources.ressources > halfed_resources do
 			wesnoth.set_variable("resources", resources); wesnoth.set_variable("halfed_resources", halfed_resources); wesnoth.set_variable("units_left", res_to_lose)
 			wesnoth.fire_event("sow_too_many_resources_message")
@@ -843,10 +882,9 @@ end
 
 -- Development Cards functions
 
-local dialog_result_type = { done = 1, back = 2, back_to_game = 3 }
 
 local function sow_build_dev(player, inventory, total_dev_cards, dev_deck)
-	if not check_required_resources(player, { grain = 1, wool = 1, ore = 1 }) then return dialog_result_type.back_to_game end
+	if not check_required_resources(player, { grain = 1, wool = 1, ore = 1 }) then return sow_dialogs.result_type.back_to_game end
 
 	local development = helper.get_child(inventory, "development")
 
@@ -854,7 +892,7 @@ local function sow_build_dev(player, inventory, total_dev_cards, dev_deck)
 	if total_dev_cards <= 0 then
 		settings.message = _"The development cards' deck is empty, you cannot buy development cards anymore."
 		wml_actions.message(settings)
-		return dialog_result_type.back_to_game
+		return sow_dialogs.result_type.back_to_game
 	end
 
 	local comparison_sum = 0
@@ -897,7 +935,7 @@ local function sow_build_dev(player, inventory, total_dev_cards, dev_deck)
 	wesnoth.set_variable("sow_game_stats.dev_deck", dev_deck)
 	sow_ressource_manager(player, { grain = -1, wool = -1, ore = -1 })
 	if victory_check then sow_victory_check(player) end
-	return dialog_result_type.done
+	return sow_dialogs.result_type.done
 end
 
 
@@ -1002,7 +1040,7 @@ local function sow_menu_use_dev(player, inventory, resources, development, dev_t
 	if wesnoth.get_variable("sow_game_stats.dev_used") then
 		settings.message = _"You already have used a development card this turn."
 		wml_actions.message(settings)
-		return dialog_result_type.back_to_game
+		return sow_dialogs.result_type.back_to_game
 	else
 		while true do
 			settings.message = string.format(tostring(_"You have a total of %u development cards. Which will you use ?"), dev_tot)
@@ -1030,11 +1068,11 @@ local function sow_menu_use_dev(player, inventory, resources, development, dev_t
 				settings.image = sow_tools.custom_image_to_core("icons/victory.png") .. "~SCALE(120,120)"
 				wml_actions.message(settings)
 				settings.image = "icons/scroll_red.png" .. "~SCALE(120,120)"
-			elseif choices_key[result] == "back" then return dialog_result_type.back
-			elseif choices_key[result] == "back_to_game" then return dialog_result_type.back_to_game
+			elseif choices_key[result] == "back" then return sow_dialogs.result_type.back
+			elseif choices_key[result] == "back_to_game" then return sow_dialogs.result_type.back_to_game
 			else
 				sow_use_dev(player, inventory, choices_key[result], resources, development)
-				return dialog_result_type.done
+				return sow_dialogs.result_type.done
 			end
 		end
 	end
@@ -1065,9 +1103,9 @@ function sow_menu_dev(player)
 			dialog_result = sow_build_dev(player, inventory, total_dev_cards, dev_deck)
 		else return
 		end
-		if dialog_result == dialog_result_type.back then
-		elseif dialog_result == dialog_result_type.back_to_game then return
-		elseif dialog_result == dialog_result_type.done then break
+		if dialog_result == sow_dialogs.result_type.back then
+		elseif dialog_result == sow_dialogs.result_type.back_to_game then return
+		elseif dialog_result == sow_dialogs.result_type.done then break
 		end
 	end --end while true do
 	update_displayed_numericals()
@@ -1079,13 +1117,31 @@ end
 
 local function sow_end_trade(choosing_turn)
 	if not helper.get_child(choosing_turn, "specifications").accepted then
-		local settings = { side_for = choosing_turn.stop_at_side, speaker = "narrator", image = "icons/coins_copper.png~SCALE(120,120)", caption = _"Domestic Trade",
-			message = _"Nobody wanted or could accept your offer..."
+		local settings = { speaker = "narrator", image = "icons/coins_copper.png~SCALE(120,120)", caption = _"Domestic Trade",
+			message = string.format("%s %s...", tostring(_"Nobody wished to or could accept the trade offer by"), tostring(sow_constants.sow_labels_new.players[choosing_turn.stop_at_side].name))
 		}
-		wml_actions.message(settings)
+		sow_tools.message(settings)
 	end
 	choosing_turn = { active = false, type = nil, stop_at_side = 0, {"specifications", { }} }
 	wesnoth.set_variable("sow_game_stats.choosing_turn", choosing_turn)
+end
+
+local function changes_to_offer_and_demand(changes)
+	local offer = {}
+	local demand = {}
+	for k, v in pairs(changes) do
+		if v > 0 then
+			offer[k] = 0
+			demand[k] = v
+		elseif v == 0 then
+			offer[k] = 0
+			demand[k] = 0
+		else
+			offer[k] = -1 * v
+			demand[k] = 0
+		end
+	end
+	return offer, demand
 end
 
 function sow_continue_trade(side_number)
@@ -1095,8 +1151,9 @@ function sow_continue_trade(side_number)
 		return
 	end
 	local specifications = helper.get_child(choosing_turn, "specifications")
-	local demand = helper.get_child(specifications, "demand")
-	local offer = helper.get_child(specifications, "offer")
+	local changes = helper.get_child(specifications, "changes")
+	local offer, demand = changes_to_offer_and_demand(changes)
+
 	local resources =  wesnoth.get_variable(string.format("sow_game_stats.player[%u].ressources", side_number))
 	if specifications.accepted or not sow_tools.swap_table(sow_tools.split(tostring(specifications.target_sides)))[tostring(side_number)] or not check_required_resources(side_number, demand, false) or sow_ai.is_ai(side_number) then
 		wml_actions.end_turn({})
@@ -1104,9 +1161,10 @@ function sow_continue_trade(side_number)
 	end
 
 	local settings = { speaker = "narrator", image = "icons/coins_copper.png~SCALE(120,120)", caption = sow_tools.format(_"Domestic Trade between %s and %s", sow_constants.sow_labels_new .players[choosing_turn.stop_at_side].name, sow_constants.sow_labels_new .players[side_number].name),
-		message = string.format("%s\n%s\n%s", you_currently_have(resources), you_currently_have(offer, _"You are offered:"), you_currently_have(demand, _"You are demanded:"))
+		message = string.format("%s\n%s\n%s", you_currently_have(resources), you_currently_have(offer, _"You are offered:"), you_currently_have(demand, _"You are demanded:")), sound = "bell.wav"
 		}
 	local result = helper.get_user_choice(settings, { _"*&icons/coins_copper.png~SCALE(30,30)=Accept Trade", string.format("&" .. sow_tools.custom_image_to_core("icons/back.png") .. "~SCALE(30,30)=" .. tostring(_"Refuse Trade"))})
+	settings.sound = nil
 	if result == 1 then
 		settings.message = sow_tools.format(_"<span weight='bold'>%s accepted the following deal offered by %s:</span>", sow_constants.sow_labels_new .players[side_number].name, sow_constants.sow_labels_new .players[choosing_turn.stop_at_side].name)
 		for k, v in pairs(offer) do
@@ -1124,10 +1182,8 @@ function sow_continue_trade(side_number)
 		sow_tools.message(settings)
 		specifications.accepted = true
 		wesnoth.set_variable("sow_game_stats.choosing_turn", choosing_turn)
-		sow_ressource_manager(choosing_turn.stop_at_side, offer, true)
-		sow_ressource_manager(choosing_turn.stop_at_side, demand)
-		sow_ressource_manager(side_number, offer)
-		sow_ressource_manager(side_number, demand, true)
+		sow_ressource_manager(choosing_turn.stop_at_side, changes)
+		sow_ressource_manager(side_number, changes, true)
 		update_displayed_numericals()
 	end
 	wml_actions.end_turn({})
@@ -1139,75 +1195,62 @@ local function sow_start_trade(player)
 	if offers_left == 0 then
 		settings.message = _"You have reached the maximum number of trade offers per turn, domestic trade unavailable until your next turn!"
 		wml_actions.message(settings)
-		return dialog_result_type.back
+		return sow_dialogs.result_type.back
 	end
 
 	local resources = wesnoth.get_variable(string.format("sow_game_stats.player[%u].ressources", player))
-	local offer = { lumber = 0, grain = 0, wool = 0, brick = 0, ore = 0 }
-	local demand = { lumber = 0, grain = 0, wool = 0, brick = 0, ore = 0 }
-	local choices, resource_table = choose_a_resource(_" (offer)", nil, 20)
-	choose_a_resource(_" (demand)", choices, 20)
-	local back_image = sow_tools.custom_image_to_core("icons/back.png")
-	table.insert(choices, "&" .. back_image .. "~SCALE(20,20)~FL(horiz)=" .. tostring(_"Confirm (target sides: all)"))
-	table.insert(choices, "&" .. back_image .. "~SCALE(20,20)~FL(horiz)=" .. tostring(_"Confirm (and specify target side numbers)"))
-	table.insert(choices, "*&" .. back_image .. "~SCALE(20,20)=" .. tostring(_"Back"))
-	table.insert(choices, "&" .. back_image .. "~SCALE(20,20)=" .. tostring(_"Back to game"))
-
-	local target_sides = {}
+	resources.resources = resources.ressources
+	resources.ressources = nil
+	local changes = { lumber = 0, grain = 0, wool = 0, brick = 0, ore = 0, resources = 0 }
+	local target_sides = ""
 	for team, side_number in sow_tools.valid_player_range() do
 		if side_number ~= player then
-			table.insert(target_sides, side_number)
+			if target_sides ~= "" then
+				target_sides = target_sides .. ","
+			end
+			target_sides = target_sides .. tostring(side_number)
 		end
 	end
+	local chosen_sides = target_sides
 
 	while true do
-		settings.message = string.format(tostring(_"<span weight='bold'>Attempting trade. Please choose.\n</span>%s\n%s\n%s"), you_currently_have(resources), you_currently_have(offer, _"You are currently offering:"), you_currently_have(demand, _"You are currently demanding:"))
-		local result = helper.get_user_choice(settings, choices)
-		local function confirm_trade()
-			settings.message = _"Your offer/demand arrangement doesn't seem ready yet, do you really want to continue ?"
-			local choices = yes_no_buttons()
-			local function resource_is_exchanged(t)
+		local result = sow_dialogs.domestic_trade(resources, changes, target_sides, chosen_sides)
+		changes = helper.get_child(result, "changes")
+		chosen_sides = result.chosen_sides
+		if result.return_value == sow_dialogs.result_type.done then
+			local function trade_ok(t)
+				local demand = false
+				local offer = false
 				for k, v in pairs(t) do
-					if v > 0 then return true end
+					if not demand and v > 0 then demand = true
+					elseif not offer and v < 0 then offer = true
+					end
+					if demand and offer then return true end
 				end
 				return false
 			end
-			if not resource_is_exchanged(offer) or not resource_is_exchanged(demand) then
-				return 1 == helper.get_user_choice(settings, choices)
-			end
-			return true
-		end
-		if result <= 5 then
-			offer[resource_table[result]] = get_input_integer(math.min(1, resources[resource_table[result]]), 0, resources[resource_table[result]], player)
-		elseif result <= 10 then
-			demand[resource_table[result - 5]] = get_input_integer(1, 0, sow_constants.MAX_UNSIGNED, player)
-		elseif result == 11 then
-			if confirm_trade() then break end
-		elseif result == 12 then
-			if confirm_trade() then
-				local result = sow_dialogs.get_sides(target_sides)
- 				if result.return_value == -1 and result.chosen_sides ~= "" then
-					target_sides = result.chosen_sides
+			if trade_ok(changes) then break
+			else
+				local result = sow_dialogs.confirm(_"Your offer/demand arrangement doesn't seem ready yet, do you really wish to continue ?")
+				if result == sow_dialogs.result_type.done then
 					break
+				elseif result == sow_dialogs.result_type.back_to_game then
+					return sow_dialogs.result_type.back_to_game
 				end
 			end
-		elseif result == 13 then
-			return dialog_result_type.back
-		elseif result == 14 then
-			return dialog_result_type.back_to_game
 		else
-			assert(false)
+			return result.return_value
 		end
 	end
 	offers_left = offers_left - 1
 	wesnoth.set_variable("sow_game_stats.trade_offers_left", offers_left)
-	if type(target_sides) == "table" then target_sides = table.concat(target_sides, ",") end
+	changes.resources = nil
 	local choosing_turn = { active = true, type = "domestic_trade", stop_at_side = player, {"specifications", {
-		target_sides = target_sides, accepted = false, { "offer", offer }, { "demand", demand }
+		target_sides = chosen_sides, accepted = false, { "changes", changes }
 	}} }
 	wesnoth.set_variable("sow_game_stats.choosing_turn", choosing_turn)
 	wml_actions.end_turn({ })
-	return dialog_result_type.done
+	return sow_dialogs.result_type.done
 end
 
 local function sow_trade_overseas(player)
@@ -1247,8 +1290,8 @@ local function sow_trade_overseas(player)
 		table.insert(choices, string.format("*&" .. sow_tools.custom_image_to_core("icons/back.png") .. "~SCALE(30,30)=%s", tostring(_"Back"))); table.insert(offer, "back")
 		table.insert(choices, string.format("&" .. sow_tools.custom_image_to_core("icons/back.png") .. "~SCALE(30,30)=%s", tostring(_"Back to game"))); table.insert(offer, "back_to_game")
 		local key_a = helper.get_user_choice(settings, choices)
-		if offer[key_a]  == "back" then return dialog_result_type.back
-		elseif offer[key_a]  == "back_to_game" then return dialog_result_type.back_to_game
+		if offer[key_a]  == "back" then return sow_dialogs.result_type.back
+		elseif offer[key_a]  == "back_to_game" then return sow_dialogs.result_type.back_to_game
 		end
 
 		-- Choosing what to get in exchange
@@ -1273,10 +1316,10 @@ local function sow_trade_overseas(player)
 			local res = {}
 			res[offer[key_a].resource] = - offer[key_a].amount; res[trade[key_b]] = 1
 			sow_ressource_manager(player, res)
-			return dialog_result_type.done
+			return sow_dialogs.result_type.done
 		elseif key_b == 6 then
 		elseif key_b == 7 then
-			return dialog_result_type.back_to_game
+			return sow_dialogs.result_type.back_to_game
 		else assert(false)
 		end
 	end
@@ -1298,9 +1341,9 @@ function sow_menu_trade(player)
 		else
 			return
 		end
-		if dialog_result == dialog_result_type.back then
-		elseif dialog_result == dialog_result_type.back_to_game then return
-		elseif dialog_result == dialog_result_type.done then break
+		if dialog_result == sow_dialogs.result_type.back then
+		elseif dialog_result == sow_dialogs.result_type.back_to_game then return
+		elseif dialog_result == sow_dialogs.result_type.done then break
 		else assert(false)
 		end
 	end
@@ -1339,10 +1382,12 @@ function sow_new_side_turn(player)
 			local t = wesnoth.get_units(filter)
 			if t then
 				for i,target in ipairs(t) do
-					local to_give = {}
-					to_give[resource] = target.hitpoints
-					sow_ressource_manager(target.side, to_give)
-					animate_resources_change(target.side, target.x, target.y, "gold.ogg", string.format("+ %i %s", target.hitpoints, resource))
+-- 					if wesnoth.get_variable(string.format("sow_game_stats.player[%u].valid", target.side)) then
+						local to_give = {}
+						to_give[resource] = target.hitpoints
+						sow_ressource_manager(target.side, to_give)
+						animate_resources_change(target.side, target.x, target.y, "gold.ogg", string.format("+ %i %s", target.hitpoints, resource))
+-- 					end
 				end
 			end
 		end
@@ -1354,12 +1399,12 @@ end
 
 function sow_set_goal()
 	local settings = { speaker = "narrator", image = sow_tools.custom_image_to_core("icons/victory.png") .. "~SCALE(120,120)", caption = tostring(_"Set Game Length"),
-		message = _"Please select the game's length (the amount of victory points to win; the default value is 10)"}
+		message = _"Please select the game's length (the amount of victory points to win; the default value is 10). If you have no idea, just choose that."}
 
 		local choices = {}
 		table.insert(choices, _"Very Short (6 Victory Points)")
 		table.insert(choices, _"Short (8 Victory Points)")
-		table.insert(choices, _"Medium (10 Victory Points)")
+		table.insert(choices, _"*Medium (10 Victory Points)")
 		table.insert(choices, _"Long (12 Victory Points)")
 		table.insert(choices, _"Very Long (14 Victory Points)")
 		table.insert(choices, _"Infinite (The game is not automatically ended - there will never be a winner.)")

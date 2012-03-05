@@ -75,6 +75,7 @@ function sow_put_unit(x, y, cfg)
 			unit_type.max_moves = unit_type.movement; unit_type.movement = nil
 			unit_type.max_experience = unit_type.experience; unit_type.experience = nil
 			unit_type.ellipse = nil
+			unit_type.die_sound = nil --this attribute isn't recognized by the unit constructor
 
 			local road = false
 			local building = false
@@ -113,26 +114,16 @@ function sow_put_unit(x, y, cfg)
 			elseif unit_type_id == "sow_robber" then
 			elseif unit_type_id == "sow_largest" then
 			elseif unit_type_id == "sow_longest" then
+			elseif unit_type_id == "sow_leader" then
 			else
 				assert(false)
 			end
 
 			helper.shallow_copy(cfg, unit_type)
 			local function blit_unit_image(unit_cfg, image)
-				local uw, uh = wesnoth.get_image_size(unit_cfg.image)
-				assert(uw, "image not found: " .. unit_cfg.image)
-				local ow, oh = wesnoth.get_image_size(image)
-				assert(ow, "image not found: " .. image)
-
-				local function get_blit_coord(below, above)
-					local result = math.floor(below/2.0) - math.floor(above/2.0)
-					assert(result >= 0, "failure to overlay image " .. image .. " onto: " .. unit_type_id)
-					return result
-				end
-				wml_actions.wml_message({ logger = "debug", message = "image: " .. image .. "; uw: " .. uw .. "; ow: " .. ow .. "; uh: " .. uh .. "; oh: " .. oh })
-				local bx, by = get_blit_coord(uw, ow), get_blit_coord(uh, oh)
+-- 				wml_actions.wml_message({ logger = "debug", message = "image: " .. image .. "; uw: " .. uw .. "; ow: " .. ow .. "; uh: " .. uh .. "; oh: " .. oh })
 				assert(not unit_cfg.overlays, "overlay already set; " .. dbms(unit_cfg, false, "unit_cfg", false, false, true))
-				unit_cfg.overlays = string.format("%s~BLIT(%s, %u, %u)", unit_cfg.image, image, bx, by)
+				unit_cfg.overlays = sow_image.create(unit_cfg.image):blit(sow_image.create(image)).image
 			end
 			blit_unit_image(unit_type, image)
 			table.insert(unit_type, {"variables", { type = unit_type_id, road = road, building = building, port = port, image = unit_type.overlays }})
@@ -148,23 +139,8 @@ end
 function sow_tools.teamcolorize_unit_image(unit)
 	assert(not sow_era_is_used)
 	assert(type(unit) == "userdata" and getmetatable(unit) == "unit")
-
-	local function normalize_to_average(color)
-		local result = {}
-		local average = (color[1] + color[2] + color[3]) / 3.0
-		for i, v in ipairs(color) do
-			local new = v - average
-			if new >= 0 then result[i] = math.floor(new)
-			else result[i] = math.ceil(new)
-			end
-		end
-		return result
-	end
-
-	local hex = sow_constants.sow_labels_new.players[unit.side].color
-	local rgb = normalize_to_average(sow_tools.hex2rgb(hex))
 	local ucfg = unit.__cfg
-	ucfg.overlays = string.format("%s~CS(%i,%i,%i)", unit.variables.image, rgb[1], rgb[2], rgb[3])
+	ucfg.overlays = sow_image.create(unit.variables.image):tc_shift(unit.side).image
 	wesnoth.put_unit(ucfg)
 end
 

@@ -1,11 +1,10 @@
 sow_constants = {}
 
-_ = _ or function() end
 if not wesnoth then
-	wesnoth = {}
-	function wesnoth.require() end
-	function wesnoth.dofile() end
+	package.path = package.path .. ";../../../../../data/lua/?.lua"
+	wesnoth = require("wesnoth")
 end
+local _ = wesnoth.textdomain("wesnoth-Settlers_of_Wesnoth")
 local helper = wesnoth.require("lua/helper.lua")
 
 sow_constants.MAX_UNSIGNED = 2147483647 --on my system...

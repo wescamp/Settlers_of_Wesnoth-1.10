@@ -1,6 +1,12 @@
 <<
 sow_tools = {}
 
+if not wesnoth then
+	package.path = package.path .. ";../../../../../data/lua/?.lua"
+	wesnoth = require("wesnoth")
+end
+local _ = wesnoth.textdomain("wesnoth-Settlers_of_Wesnoth")
+
 function sow_tools.sow_random(arg)
 	assert(type(arg) == "number")
 	local res = math.random(arg)
