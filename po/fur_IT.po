@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: branch 1.10\n"
 "Report-Msgid-Bugs-To: http://bugs.wesnoth.org/\n"
-"POT-Creation-Date: 2012-02-27 13:42+0100\n"
+"POT-Creation-Date: 2012-03-05 03:53+0100\n"
 "PO-Revision-Date: 2012-02-27 13:05+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -17,7 +17,8 @@ msgid "Settlers of Wesnoth Era"
 msgstr ""
 
 #. [editor_group]: id=sow
-#: Settlers_of_Wesnoth/_main.cfg:39
+#. [lua]: sow_tools.message
+#: Settlers_of_Wesnoth/_main.cfg:39 Settlers_of_Wesnoth/lua/tools.lua:150
 msgid "Settlers of Wesnoth"
 msgstr ""
 
@@ -46,126 +47,304 @@ msgstr ""
 msgid "Settlers of Wesnoth units"
 msgstr ""
 
-#. [lua]: you_currently_have
-#: Settlers_of_Wesnoth/lua/main.lua:732
-msgid "You currently have:"
-msgstr ""
-
-#. [lua]: add
-#. [lua]: sow_use_dev
-#: Settlers_of_Wesnoth/lua/main.lua:738 Settlers_of_Wesnoth/lua/main.lua:1571
-msgid ""
-"\n"
-"\t%u units of %s;"
-msgstr ""
-
 #. [lua]: add
 #. [lua]: label
-#: Settlers_of_Wesnoth/lua/main.lua:741 Settlers_of_Wesnoth/lua/main.lua:947
+#: Settlers_of_Wesnoth/lua/main.lua:1097 Settlers_of_Wesnoth/lua/main.lua:1335
+#: Settlers_of_Wesnoth/lua/constants.lua:2571
 msgid "lumber"
 msgstr ""
 
 #. [lua]: add
 #. [lua]: label
-#: Settlers_of_Wesnoth/lua/main.lua:742 Settlers_of_Wesnoth/lua/main.lua:948
+#: Settlers_of_Wesnoth/lua/main.lua:1098 Settlers_of_Wesnoth/lua/main.lua:1336
+#: Settlers_of_Wesnoth/lua/constants.lua:2571
 msgid "grain"
 msgstr ""
 
 #. [lua]: add
 #. [lua]: label
-#: Settlers_of_Wesnoth/lua/main.lua:743 Settlers_of_Wesnoth/lua/main.lua:949
-msgid "wool"
+#: Settlers_of_Wesnoth/lua/main.lua:1101 Settlers_of_Wesnoth/lua/main.lua:1339
+#: Settlers_of_Wesnoth/lua/constants.lua:2571
+msgid "ore"
 msgstr ""
 
 #. [lua]: add
 #. [lua]: label
-#: Settlers_of_Wesnoth/lua/main.lua:744 Settlers_of_Wesnoth/lua/main.lua:950
+#: Settlers_of_Wesnoth/lua/main.lua:1100 Settlers_of_Wesnoth/lua/main.lua:1338
+#: Settlers_of_Wesnoth/lua/constants.lua:2571
 msgid "brick"
 msgstr ""
 
 #. [lua]: add
 #. [lua]: label
-#: Settlers_of_Wesnoth/lua/main.lua:745 Settlers_of_Wesnoth/lua/main.lua:951
-msgid "ore"
+#: Settlers_of_Wesnoth/lua/main.lua:1099 Settlers_of_Wesnoth/lua/main.lua:1337
+#: Settlers_of_Wesnoth/lua/constants.lua:2571
+msgid "wool"
+msgstr ""
+
+#: Settlers_of_Wesnoth/lua/constants.lua:2580
+msgid "Red"
+msgstr ""
+
+#: Settlers_of_Wesnoth/lua/constants.lua:2581
+msgid "Blue"
+msgstr ""
+
+#: Settlers_of_Wesnoth/lua/constants.lua:2582
+msgid "Green"
+msgstr ""
+
+#: Settlers_of_Wesnoth/lua/constants.lua:2583
+msgid "Purple"
+msgstr ""
+
+#: Settlers_of_Wesnoth/lua/constants.lua:2584
+msgid "Black"
+msgstr ""
+
+#: Settlers_of_Wesnoth/lua/constants.lua:2585
+msgid "Brown"
+msgstr ""
+
+#: Settlers_of_Wesnoth/lua/constants.lua:2586
+msgid "Orange"
+msgstr ""
+
+#: Settlers_of_Wesnoth/lua/constants.lua:2587
+msgid "Teal"
+msgstr ""
+
+#: Settlers_of_Wesnoth/lua/constants.lua:2588
+msgid "White"
+msgstr ""
+
+#: Settlers_of_Wesnoth/lua/dialogs.lua:184
+msgid "done"
+msgstr ""
+
+#: Settlers_of_Wesnoth/lua/dialogs.lua:193
+msgid "back"
+msgstr ""
+
+#: Settlers_of_Wesnoth/lua/dialogs.lua:202
+msgid "back to game"
+msgstr ""
+
+#. [lua]: sync
+#: Settlers_of_Wesnoth/lua/dialogs.lua:275
+msgid "Choose sides"
+msgstr ""
+
+#. [lua]: preshow
+#: Settlers_of_Wesnoth/lua/dialogs.lua:325
+msgid "%s (%s, side %s)"
+msgstr ""
+
+#. [lua]: sync
+#: Settlers_of_Wesnoth/lua/dialogs.lua:366
+msgid "Please confirm"
+msgstr ""
+
+#. [lua]: sync
+#: Settlers_of_Wesnoth/lua/dialogs.lua:424
+msgid "name of the resource to trade"
+msgstr ""
+
+#. [lua]: sync
+#: Settlers_of_Wesnoth/lua/dialogs.lua:424
+msgid "resource"
+msgstr ""
+
+#. [lua]: sync
+#: Settlers_of_Wesnoth/lua/dialogs.lua:432
+msgid "your current amount of this resource"
+msgstr ""
+
+#. [lua]: sync
+#. [lua]: insert
+#. [lua]: sow_menu_dev
+#: Settlers_of_Wesnoth/lua/dialogs.lua:432
+#: Settlers_of_Wesnoth/lua/main.lua:2052 Settlers_of_Wesnoth/lua/main.lua:2091
+#: Settlers_of_Wesnoth/lua/main.lua:2092
+msgid "available"
+msgstr ""
+
+#. [lua]: sync
+#: Settlers_of_Wesnoth/lua/dialogs.lua:454
+msgid "change applied to this resource in case of successful trade"
+msgstr ""
+
+#. [lua]: sync
+#: Settlers_of_Wesnoth/lua/dialogs.lua:454
+msgid "changes (offer/demand)"
+msgstr ""
+
+#. [lua]: sync
+#: Settlers_of_Wesnoth/lua/dialogs.lua:462
+msgid "your resulting amount of this resource in case of successful trade"
+msgstr ""
+
+#. [lua]: sync
+#: Settlers_of_Wesnoth/lua/dialogs.lua:462
+msgid "result"
+msgstr ""
+
+#. [lua]: add_resource_row
+#: Settlers_of_Wesnoth/lua/dialogs.lua:501
+msgid "- (offer)"
+msgstr ""
+
+#. [lua]: add_resource_row
+#: Settlers_of_Wesnoth/lua/dialogs.lua:509
+msgid "+ (demand)"
+msgstr ""
+
+#. [lua]: add_resource_row
+#: Settlers_of_Wesnoth/lua/dialogs.lua:552
+msgid "sum of your current resources"
+msgstr ""
+
+#. [lua]: add_resource_row
+#: Settlers_of_Wesnoth/lua/dialogs.lua:552
+msgid "total"
+msgstr ""
+
+#. [lua]: add_resource_row
+#: Settlers_of_Wesnoth/lua/dialogs.lua:582
+msgid "sum of applied changes"
+msgstr ""
+
+#. [lua]: add_resource_row
+#: Settlers_of_Wesnoth/lua/dialogs.lua:590
+msgid "sum of resulting resources"
+msgstr ""
+
+#. [lua]: add_resource_row
+#: Settlers_of_Wesnoth/lua/dialogs.lua:596
+msgid ""
+"Only the players with the listed side numbers will be asked whether to "
+"accept the trade offer\n"
+"(default: all other players)."
+msgstr ""
+
+#. [lua]: add_resource_row
+#. [lua]: sow_end_trade
+#. [lua]: sow_start_trade
+#: Settlers_of_Wesnoth/lua/dialogs.lua:606
+#: Settlers_of_Wesnoth/lua/main.lua:2117 Settlers_of_Wesnoth/lua/main.lua:2191
+msgid "Domestic Trade"
+msgstr ""
+
+#. [lua]: add_resource_row
+#: Settlers_of_Wesnoth/lua/dialogs.lua:619
+msgid "Attempting trade. Please choose."
+msgstr ""
+
+#. [lua]: add_resource_row
+#: Settlers_of_Wesnoth/lua/dialogs.lua:651
+msgid "target sides:"
+msgstr ""
+
+#. [lua]: add_resource_row
+#: Settlers_of_Wesnoth/lua/dialogs.lua:666
+msgid "specify"
+msgstr ""
+
+#. [lua]: update_displayed_numericals
+#: Settlers_of_Wesnoth/lua/dialogs.lua:713
+msgid " (offering %u)"
+msgstr ""
+
+#. [lua]: update_displayed_numericals
+#: Settlers_of_Wesnoth/lua/dialogs.lua:714
+msgid " (demanding %u)"
+msgstr ""
+
+#. [lua]: you_currently_have
+#: Settlers_of_Wesnoth/lua/main.lua:1088
+msgid "You currently have:"
+msgstr ""
+
+#. [lua]: add
+#. [lua]: sow_use_dev
+#: Settlers_of_Wesnoth/lua/main.lua:1094 Settlers_of_Wesnoth/lua/main.lua:1965
+msgid ""
+"\n"
+"\t%u units of %s;"
 msgstr ""
 
 #. [lua]: insert
-#: Settlers_of_Wesnoth/lua/main.lua:758
+#: Settlers_of_Wesnoth/lua/main.lua:1114
 msgid "Lumber"
 msgstr ""
 
 #. [lua]: insert
-#: Settlers_of_Wesnoth/lua/main.lua:759
+#: Settlers_of_Wesnoth/lua/main.lua:1115
 msgid "Grain"
 msgstr ""
 
 #. [lua]: insert
-#: Settlers_of_Wesnoth/lua/main.lua:760
+#: Settlers_of_Wesnoth/lua/main.lua:1116
 msgid "Wool"
 msgstr ""
 
 #. [lua]: insert
-#: Settlers_of_Wesnoth/lua/main.lua:761
+#: Settlers_of_Wesnoth/lua/main.lua:1117
 msgid "Brick"
 msgstr ""
 
 #. [lua]: insert
-#: Settlers_of_Wesnoth/lua/main.lua:762
+#: Settlers_of_Wesnoth/lua/main.lua:1118
 msgid "Ore"
 msgstr ""
 
 #. [lua]: yes_no_buttons
-#: Settlers_of_Wesnoth/lua/main.lua:769
+#: Settlers_of_Wesnoth/lua/main.lua:1125
 msgid "yes"
 msgstr ""
 
 #. [lua]: yes_no_buttons
-#: Settlers_of_Wesnoth/lua/main.lua:770
+#: Settlers_of_Wesnoth/lua/main.lua:1126
 msgid "no"
 msgstr ""
 
 #. [lua]: currently_unavailable
-#: Settlers_of_Wesnoth/lua/main.lua:783
+#: Settlers_of_Wesnoth/lua/main.lua:1139
 msgid "This feature is currently unavailable..."
 msgstr ""
 
 #. [lua]: check_required_resources
-#: Settlers_of_Wesnoth/lua/main.lua:801
+#: Settlers_of_Wesnoth/lua/main.lua:1157
 msgid "You don't have all the required resources! "
 msgstr ""
 
 #. [lua]: get_input_integer
-#: Settlers_of_Wesnoth/lua/main.lua:812
-msgid "Invalid input! Allowed are integer numbers between"
+#: Settlers_of_Wesnoth/lua/main.lua:1167
+msgid "Invalid input! Allowed are integer numbers between %i and %i"
 msgstr ""
 
 #. [lua]: get_input_integer
-#: Settlers_of_Wesnoth/lua/main.lua:814
-msgid "and"
-msgstr ""
-
-#. [lua]: get_input_integer
-#: Settlers_of_Wesnoth/lua/main.lua:818
+#: Settlers_of_Wesnoth/lua/main.lua:1170
 msgid "How much ?"
 msgstr ""
 
 #. [lua]: get_input_integer
-#: Settlers_of_Wesnoth/lua/main.lua:819
+#: Settlers_of_Wesnoth/lua/main.lua:1171
 msgid "number:"
 msgstr ""
 
 #. [lua]: label
-#: Settlers_of_Wesnoth/lua/main.lua:941
+#: Settlers_of_Wesnoth/lua/main.lua:1329
 msgid "Victory Points"
 msgstr ""
 
 #. [lua]: label
-#: Settlers_of_Wesnoth/lua/main.lua:942
+#: Settlers_of_Wesnoth/lua/main.lua:1330
 msgid "Resources"
 msgstr ""
 
 #. [lua]: label
-#: Settlers_of_Wesnoth/lua/main.lua:943
+#: Settlers_of_Wesnoth/lua/main.lua:1331
 msgid "Development"
 msgstr ""
 
@@ -173,120 +352,120 @@ msgstr ""
 #. [lua]: label
 #. [lua]: check_for_longest_road
 #: Settlers_of_Wesnoth/units/sow_longest.cfg:6
-#: Settlers_of_Wesnoth/lua/main.lua:944 Settlers_of_Wesnoth/lua/main.lua:1155
+#: Settlers_of_Wesnoth/lua/main.lua:1332 Settlers_of_Wesnoth/lua/main.lua:1543
 msgid "Longest Road"
 msgstr ""
 
 #. [unit_type]: id=sow_largest, race=sow_units
 #. [lua]: label
 #: Settlers_of_Wesnoth/units/sow_largest.cfg:6
-#: Settlers_of_Wesnoth/lua/main.lua:945
+#: Settlers_of_Wesnoth/lua/main.lua:1333
 msgid "Largest Army"
 msgstr ""
 
 #. [lua]: label
-#: Settlers_of_Wesnoth/lua/main.lua:953
+#: Settlers_of_Wesnoth/lua/main.lua:1341
 msgid "knight cards"
 msgstr ""
 
 #. [lua]: label
-#: Settlers_of_Wesnoth/lua/main.lua:954
+#: Settlers_of_Wesnoth/lua/main.lua:1342
 msgid "monopoly cards"
 msgstr ""
 
 #. [lua]: label
-#: Settlers_of_Wesnoth/lua/main.lua:955
+#: Settlers_of_Wesnoth/lua/main.lua:1343
 msgid "plenty cards"
 msgstr ""
 
 #. [lua]: label
-#: Settlers_of_Wesnoth/lua/main.lua:956
+#: Settlers_of_Wesnoth/lua/main.lua:1344
 msgid "road cards"
 msgstr ""
 
 #. [lua]: label
-#: Settlers_of_Wesnoth/lua/main.lua:957
+#: Settlers_of_Wesnoth/lua/main.lua:1345
 msgid "victory cards"
 msgstr ""
 
 #. [lua]: sow_longest_check
-#: Settlers_of_Wesnoth/lua/main.lua:1190
+#: Settlers_of_Wesnoth/lua/main.lua:1578
 msgid ""
 "\n"
 "%s's longest road is now %i units long."
 msgstr ""
 
 #. [lua]: sow_longest_check
-#: Settlers_of_Wesnoth/lua/main.lua:1199
+#: Settlers_of_Wesnoth/lua/main.lua:1587
 msgid ""
 "\n"
 "%s %s the Longest Road award, worth 2 victory points!"
 msgstr ""
 
 #. [lua]: sow_end_robber
-#: Settlers_of_Wesnoth/lua/main.lua:1369
+#: Settlers_of_Wesnoth/lua/main.lua:1757
 msgid "Who will you steal from ?"
 msgstr ""
 
 #. [lua]: sow_end_robber
-#: Settlers_of_Wesnoth/lua/main.lua:1369
+#: Settlers_of_Wesnoth/lua/main.lua:1757
 msgid "Steal resources"
 msgstr ""
 
 #. [lua]: sow_end_robber
-#: Settlers_of_Wesnoth/lua/main.lua:1378
+#: Settlers_of_Wesnoth/lua/main.lua:1772
 msgid "resources left"
 msgstr ""
 
 #. [lua]: sow_end_robber
-#: Settlers_of_Wesnoth/lua/main.lua:1391
+#: Settlers_of_Wesnoth/lua/main.lua:1785
 msgid "Resource theft report"
 msgstr ""
 
 #. [lua]: sow_end_robber
-#: Settlers_of_Wesnoth/lua/main.lua:1393
+#: Settlers_of_Wesnoth/lua/main.lua:1787
 msgid "%s had no resources for %s to steal..."
 msgstr ""
 
 #. [lua]: sow_end_robber
-#: Settlers_of_Wesnoth/lua/main.lua:1399
+#: Settlers_of_Wesnoth/lua/main.lua:1793
 msgid "%s stole a unit of %s from %s."
 msgstr ""
 
 #. [lua]: local_half_resources
-#: Settlers_of_Wesnoth/lua/main.lua:1417
+#: Settlers_of_Wesnoth/lua/main.lua:1811
 msgid "units of resources"
 msgstr ""
 
 #. [lua]: local_half_resources
-#: Settlers_of_Wesnoth/lua/main.lua:1417
+#: Settlers_of_Wesnoth/lua/main.lua:1811
 msgid "lost"
 msgstr ""
 
 #. [lua]: local_half_resources
-#: Settlers_of_Wesnoth/lua/main.lua:1417
+#: Settlers_of_Wesnoth/lua/main.lua:1811
 msgid "Too many resources!"
 msgstr ""
 
 #. [lua]: sow_activate_robber
-#: Settlers_of_Wesnoth/lua/main.lua:1478
+#: Settlers_of_Wesnoth/lua/main.lua:1873
 msgid "Robber activated by"
 msgstr ""
 
 #. [lua]: sow_build_dev
-#: Settlers_of_Wesnoth/lua/main.lua:1494
+#: Settlers_of_Wesnoth/lua/main.lua:1888
 msgid "Development Card"
 msgstr ""
 
 #. [lua]: sow_build_dev
-#: Settlers_of_Wesnoth/lua/main.lua:1496
+#: Settlers_of_Wesnoth/lua/main.lua:1890
 msgid ""
 "The development cards' deck is empty, you cannot buy development cards "
 "anymore."
 msgstr ""
 
 #. [lua]: sum
-#: Settlers_of_Wesnoth/lua/main.lua:1521
+#: Settlers_of_Wesnoth/lua/main.lua:1915
 msgid ""
 "Recent developments in your settlements and cities earn you one victory "
 "point! You keep this card in your hand until the end of the game, when it is "
@@ -295,7 +474,7 @@ msgid ""
 msgstr ""
 
 #. [lua]: sum
-#: Settlers_of_Wesnoth/lua/main.lua:1524
+#: Settlers_of_Wesnoth/lua/main.lua:1918
 msgid ""
 "Recent developments in your settlements and cities earn you a Build Road "
 "card, which you can use later to build two roads for free. This does not "
@@ -304,14 +483,14 @@ msgid ""
 msgstr ""
 
 #. [lua]: sum
-#: Settlers_of_Wesnoth/lua/main.lua:1526
+#: Settlers_of_Wesnoth/lua/main.lua:1920
 msgid ""
 "Recent developments in your settlements and cities earn you a Year of Plenty "
 "card, which you can use later to earn two resources of any kind."
 msgstr ""
 
 #. [lua]: sum
-#: Settlers_of_Wesnoth/lua/main.lua:1528
+#: Settlers_of_Wesnoth/lua/main.lua:1922
 msgid ""
 "Recent developments in your settlements and cities earn you a Monopoly card, "
 "which you can use later to claim a single ressource type from all the other "
@@ -319,24 +498,24 @@ msgid ""
 msgstr ""
 
 #. [lua]: sum
-#: Settlers_of_Wesnoth/lua/main.lua:1530
+#: Settlers_of_Wesnoth/lua/main.lua:1924
 msgid ""
 "Recent developments in your settlements and cities earn you a Knight card, "
 "which you can use later to move the robber, with everything it implies."
 msgstr ""
 
 #. [lua]: sum
-#: Settlers_of_Wesnoth/lua/main.lua:1533
+#: Settlers_of_Wesnoth/lua/main.lua:1927
 msgid "%s bought a Development Card."
 msgstr ""
 
 #. [lua]: sow_use_dev
-#: Settlers_of_Wesnoth/lua/main.lua:1555
+#: Settlers_of_Wesnoth/lua/main.lua:1949
 msgid "Development: Year of Plenty"
 msgstr ""
 
 #. [lua]: sow_use_dev
-#: Settlers_of_Wesnoth/lua/main.lua:1559
+#: Settlers_of_Wesnoth/lua/main.lua:1953
 msgid ""
 "Plentyful harvest allows you to claim two resource units.\n"
 "You have %u more units to choose.\n"
@@ -345,41 +524,41 @@ msgid ""
 msgstr ""
 
 #. [lua]: sow_use_dev
-#: Settlers_of_Wesnoth/lua/main.lua:1566
+#: Settlers_of_Wesnoth/lua/main.lua:1960
 msgid "Plentyful harvest allowed %s to claim the following extra resources:"
 msgstr ""
 
 #. [lua]: sow_use_dev
-#: Settlers_of_Wesnoth/lua/main.lua:1579
+#: Settlers_of_Wesnoth/lua/main.lua:1973
 msgid "Development: Monopoly"
 msgstr ""
 
 #. [lua]: sow_use_dev
-#: Settlers_of_Wesnoth/lua/main.lua:1580
+#: Settlers_of_Wesnoth/lua/main.lua:1974
 msgid ""
 "What resource type will you have monopoly on?\n"
 " %s"
 msgstr ""
 
 #. [lua]: sow_use_dev
-#: Settlers_of_Wesnoth/lua/main.lua:1585
+#: Settlers_of_Wesnoth/lua/main.lua:1979
 msgid "%s used a Monopoly development card and claimed:"
 msgstr ""
 
 #. [lua]: sow_use_dev
-#: Settlers_of_Wesnoth/lua/main.lua:1591
+#: Settlers_of_Wesnoth/lua/main.lua:1985
 msgid ""
 "%s\n"
 "\t%u units of %s from %s;"
 msgstr ""
 
 #. [lua]: sow_use_dev
-#: Settlers_of_Wesnoth/lua/main.lua:1601
+#: Settlers_of_Wesnoth/lua/main.lua:1995
 msgid "Development: Road Building"
 msgstr ""
 
 #. [lua]: sow_use_dev
-#: Settlers_of_Wesnoth/lua/main.lua:1601
+#: Settlers_of_Wesnoth/lua/main.lua:1995
 msgid ""
 "%s used a Build Road development card, which allows him to place two free "
 "roads. This does not allow him to have more than 15 road units, however. "
@@ -388,95 +567,85 @@ msgid ""
 msgstr ""
 
 #. [lua]: sow_use_dev
-#: Settlers_of_Wesnoth/lua/main.lua:1605
+#: Settlers_of_Wesnoth/lua/main.lua:1999
 msgid "Development: Knight"
 msgstr ""
 
 #. [lua]: sow_use_dev
-#: Settlers_of_Wesnoth/lua/main.lua:1607
+#: Settlers_of_Wesnoth/lua/main.lua:2001
 msgid ""
 "%s used a knight to move the robber.\n"
 "%s has used a total of %u Knights."
 msgstr ""
 
 #. [lua]: sow_use_dev
-#: Settlers_of_Wesnoth/lua/main.lua:1623
+#: Settlers_of_Wesnoth/lua/main.lua:2017
 msgid "gets"
 msgstr ""
 
 #. [lua]: sow_use_dev
-#: Settlers_of_Wesnoth/lua/main.lua:1631
+#: Settlers_of_Wesnoth/lua/main.lua:2025
 msgid "keeps"
 msgstr ""
 
 #. [lua]: sow_use_dev
-#: Settlers_of_Wesnoth/lua/main.lua:1635
+#: Settlers_of_Wesnoth/lua/main.lua:2029
 msgid ""
 "%s\n"
 "%s %s the Largest Army award, worth 2 victory points!"
 msgstr ""
 
 #. [lua]: sow_menu_use_dev
-#: Settlers_of_Wesnoth/lua/main.lua:1644
+#: Settlers_of_Wesnoth/lua/main.lua:2038
 msgid "You already have used a development card this turn."
 msgstr ""
 
 #. [lua]: sow_menu_use_dev
-#: Settlers_of_Wesnoth/lua/main.lua:1649
+#: Settlers_of_Wesnoth/lua/main.lua:2043
 msgid "You have a total of %u development cards. Which will you use ?"
 msgstr ""
 
 #. [lua]: insert
-#. [lua]: sow_menu_dev
-#: Settlers_of_Wesnoth/lua/main.lua:1658 Settlers_of_Wesnoth/lua/main.lua:1697
-#: Settlers_of_Wesnoth/lua/main.lua:1698
-msgid "available"
-msgstr ""
-
-#. [lua]: insert
-#: Settlers_of_Wesnoth/lua/main.lua:1661
+#: Settlers_of_Wesnoth/lua/main.lua:2055
 msgid "Victory Card"
 msgstr ""
 
 #. [lua]: insert
-#: Settlers_of_Wesnoth/lua/main.lua:1662
+#: Settlers_of_Wesnoth/lua/main.lua:2056
 msgid "Road Building Card"
 msgstr ""
 
 #. [lua]: insert
-#: Settlers_of_Wesnoth/lua/main.lua:1663
+#: Settlers_of_Wesnoth/lua/main.lua:2057
 msgid "Year of Plenty Card"
 msgstr ""
 
 #. [lua]: insert
-#: Settlers_of_Wesnoth/lua/main.lua:1664
+#: Settlers_of_Wesnoth/lua/main.lua:2058
 msgid "Monopoly Card"
 msgstr ""
 
 #. [lua]: insert
-#: Settlers_of_Wesnoth/lua/main.lua:1665
+#: Settlers_of_Wesnoth/lua/main.lua:2059
 msgid "Knight Card"
 msgstr ""
 
 #. [lua]: insert
-#. [lua]: sow_start_trade
-#: Settlers_of_Wesnoth/lua/main.lua:1666 Settlers_of_Wesnoth/lua/main.lua:1794
-#: Settlers_of_Wesnoth/lua/main.lua:1888
+#: Settlers_of_Wesnoth/lua/main.lua:2060 Settlers_of_Wesnoth/lua/main.lua:2287
 msgid "Back"
 msgstr ""
 
 #. [lua]: insert
 #. [lua]: sow_menu_dev
-#. [lua]: sow_start_trade
 #. [lua]: sow_menu_trade
-#: Settlers_of_Wesnoth/lua/main.lua:1667 Settlers_of_Wesnoth/lua/main.lua:1699
-#: Settlers_of_Wesnoth/lua/main.lua:1795 Settlers_of_Wesnoth/lua/main.lua:1889
-#: Settlers_of_Wesnoth/lua/main.lua:1908 Settlers_of_Wesnoth/lua/main.lua:1932
+#: Settlers_of_Wesnoth/lua/main.lua:2061 Settlers_of_Wesnoth/lua/main.lua:2093
+#: Settlers_of_Wesnoth/lua/main.lua:2288 Settlers_of_Wesnoth/lua/main.lua:2307
+#: Settlers_of_Wesnoth/lua/main.lua:2331
 msgid "Back to game"
 msgstr ""
 
 #. [lua]: insert
-#: Settlers_of_Wesnoth/lua/main.lua:1670
+#: Settlers_of_Wesnoth/lua/main.lua:2064
 msgid ""
 "Victory cards cannot be used. They are kept in your hand until you have "
 "enough victory points (counting them) to win the game, at which point they "
@@ -485,156 +654,111 @@ msgstr ""
 
 #. [set_menu_item]: id=sow_menu_dev
 #. [lua]: sow_menu_dev
-#: Settlers_of_Wesnoth/utils/sow_menus.cfg:68
-#: Settlers_of_Wesnoth/lua/main.lua:1694
+#: Settlers_of_Wesnoth/utils/sow_menus.cfg:65
+#: Settlers_of_Wesnoth/lua/main.lua:2088
 msgid "Development Cards"
 msgstr ""
 
 #. [lua]: sow_menu_dev
-#: Settlers_of_Wesnoth/lua/main.lua:1697
+#: Settlers_of_Wesnoth/lua/main.lua:2091
 msgid "Use Development Card"
 msgstr ""
 
 #. [lua]: sow_menu_dev
-#: Settlers_of_Wesnoth/lua/main.lua:1698
+#: Settlers_of_Wesnoth/lua/main.lua:2092
 msgid "Buy Development Card (G, W, O)"
 msgstr ""
 
 #. [lua]: sow_end_trade
-#. [lua]: sow_start_trade
-#: Settlers_of_Wesnoth/lua/main.lua:1723 Settlers_of_Wesnoth/lua/main.lua:1779
-msgid "Domestic Trade"
-msgstr ""
-
-#. [lua]: sow_end_trade
-#: Settlers_of_Wesnoth/lua/main.lua:1724
-msgid "Nobody wanted or could accept your offer..."
+#: Settlers_of_Wesnoth/lua/main.lua:2118
+msgid "Nobody wished to or could accept the trade offer by"
 msgstr ""
 
 #. [lua]: sow_continue_trade
-#: Settlers_of_Wesnoth/lua/main.lua:1747
+#: Settlers_of_Wesnoth/lua/main.lua:2160
 msgid "Domestic Trade between %s and %s"
 msgstr ""
 
 #. [lua]: sow_continue_trade
-#: Settlers_of_Wesnoth/lua/main.lua:1748
+#: Settlers_of_Wesnoth/lua/main.lua:2161
 msgid "You are demanded:"
 msgstr ""
 
 #. [lua]: sow_continue_trade
-#: Settlers_of_Wesnoth/lua/main.lua:1748
+#: Settlers_of_Wesnoth/lua/main.lua:2161
 msgid "You are offered:"
 msgstr ""
 
 #. [lua]: sow_continue_trade
-#: Settlers_of_Wesnoth/lua/main.lua:1750
+#: Settlers_of_Wesnoth/lua/main.lua:2163
 msgid "*&icons/coins_copper.png~SCALE(30,30)=Accept Trade"
 msgstr ""
 
 #. [lua]: sow_continue_trade
-#: Settlers_of_Wesnoth/lua/main.lua:1750
+#: Settlers_of_Wesnoth/lua/main.lua:2163
 msgid "Refuse Trade"
 msgstr ""
 
 #. [lua]: sow_continue_trade
-#: Settlers_of_Wesnoth/lua/main.lua:1752
+#: Settlers_of_Wesnoth/lua/main.lua:2166
 msgid ""
 "<span weight='bold'>%s accepted the following deal offered by %s:</span>"
 msgstr ""
 
 #. [lua]: sow_continue_trade
-#: Settlers_of_Wesnoth/lua/main.lua:1755 Settlers_of_Wesnoth/lua/main.lua:1761
+#: Settlers_of_Wesnoth/lua/main.lua:2169 Settlers_of_Wesnoth/lua/main.lua:2175
 msgid ""
 "%s\n"
 "\t%u units of %s"
 msgstr ""
 
 #. [lua]: sow_continue_trade
-#: Settlers_of_Wesnoth/lua/main.lua:1758
+#: Settlers_of_Wesnoth/lua/main.lua:2172
 msgid ""
 "\n"
 "was offered and"
 msgstr ""
 
 #. [lua]: sow_continue_trade
-#: Settlers_of_Wesnoth/lua/main.lua:1764
+#: Settlers_of_Wesnoth/lua/main.lua:2178
 msgid ""
 "\n"
 "was demanded."
 msgstr ""
 
 #. [lua]: sow_start_trade
-#: Settlers_of_Wesnoth/lua/main.lua:1781
+#: Settlers_of_Wesnoth/lua/main.lua:2193
 msgid ""
 "You have reached the maximum number of trade offers per turn, domestic trade "
 "unavailable until your next turn!"
 msgstr ""
 
-#. [lua]: sow_start_trade
-#: Settlers_of_Wesnoth/lua/main.lua:1789
-msgid " (offer)"
-msgstr ""
-
-#. [lua]: sow_start_trade
-#: Settlers_of_Wesnoth/lua/main.lua:1790
-msgid " (demand)"
-msgstr ""
-
-#. [lua]: sow_start_trade
-#: Settlers_of_Wesnoth/lua/main.lua:1792
-msgid "Confirm (target sides: all)"
-msgstr ""
-
-#. [lua]: sow_start_trade
-#: Settlers_of_Wesnoth/lua/main.lua:1793
-msgid "Confirm (and specify target side numbers)"
-msgstr ""
-
-#. [lua]: sow_start_trade
-#: Settlers_of_Wesnoth/lua/main.lua:1805
-msgid "You are currently offering:"
-msgstr ""
-
-#. [lua]: sow_start_trade
-#: Settlers_of_Wesnoth/lua/main.lua:1805
-msgid "You are currently demanding:"
-msgstr ""
-
-#. [lua]: sow_start_trade
-#: Settlers_of_Wesnoth/lua/main.lua:1805
+#. [lua]: trade_ok
+#: Settlers_of_Wesnoth/lua/main.lua:2231
 msgid ""
-"<span weight='bold'>Attempting trade. Please choose.\n"
-"</span>%s\n"
-"%s\n"
-"%s"
-msgstr ""
-
-#. [lua]: confirm_trade
-#: Settlers_of_Wesnoth/lua/main.lua:1808
-msgid ""
-"Your offer/demand arrangement doesn't seem ready yet, do you really want to "
+"Your offer/demand arrangement doesn't seem ready yet, do you really wish to "
 "continue ?"
 msgstr ""
 
 #. [lua]: sow_trade_overseas
-#: Settlers_of_Wesnoth/lua/main.lua:1873
+#: Settlers_of_Wesnoth/lua/main.lua:2272
 msgid "Trade Overseas"
 msgstr ""
 
 #. [lua]: sow_trade_overseas
-#: Settlers_of_Wesnoth/lua/main.lua:1874
+#: Settlers_of_Wesnoth/lua/main.lua:2273
 msgid ""
 "<span weight='bold'>What will you trade ?\n"
 "</span>%s"
 msgstr ""
 
 #. [lua]: insert
-#: Settlers_of_Wesnoth/lua/main.lua:1880
+#: Settlers_of_Wesnoth/lua/main.lua:2279
 msgid "units of"
 msgstr ""
 
 #. [lua]: insert
-#: Settlers_of_Wesnoth/lua/main.lua:1897
+#: Settlers_of_Wesnoth/lua/main.lua:2296
 msgid ""
 "<span weight='bold'>What will you take in exchange ?\n"
 "You are offering:</span>\n"
@@ -643,127 +767,127 @@ msgid ""
 msgstr ""
 
 #. [lua]: insert
-#: Settlers_of_Wesnoth/lua/main.lua:1902
+#: Settlers_of_Wesnoth/lua/main.lua:2301
 msgid "A unit of Lumber"
 msgstr ""
 
 #. [lua]: insert
-#: Settlers_of_Wesnoth/lua/main.lua:1903
+#: Settlers_of_Wesnoth/lua/main.lua:2302
 msgid "A unit of Grain"
 msgstr ""
 
 #. [lua]: insert
-#: Settlers_of_Wesnoth/lua/main.lua:1904
+#: Settlers_of_Wesnoth/lua/main.lua:2303
 msgid "A unit of Wool"
 msgstr ""
 
 #. [lua]: insert
-#: Settlers_of_Wesnoth/lua/main.lua:1905
+#: Settlers_of_Wesnoth/lua/main.lua:2304
 msgid "A unit of Brick"
 msgstr ""
 
 #. [lua]: insert
-#: Settlers_of_Wesnoth/lua/main.lua:1906
+#: Settlers_of_Wesnoth/lua/main.lua:2305
 msgid "A unit of Ore"
 msgstr ""
 
 #. [lua]: insert
-#: Settlers_of_Wesnoth/lua/main.lua:1907
+#: Settlers_of_Wesnoth/lua/main.lua:2306
 msgid "Change my offer"
 msgstr ""
 
 #. [lua]: insert
-#: Settlers_of_Wesnoth/lua/main.lua:1912
+#: Settlers_of_Wesnoth/lua/main.lua:2311
 msgid "%s traded %u units of %s overseas in exchange for a unit of %s."
 msgstr ""
 
 #. [set_menu_item]: id=sow_menu_trade
 #. [lua]: sow_menu_trade
-#: Settlers_of_Wesnoth/utils/sow_menus.cfg:39
-#: Settlers_of_Wesnoth/lua/main.lua:1930
+#: Settlers_of_Wesnoth/utils/sow_menus.cfg:36
+#: Settlers_of_Wesnoth/lua/main.lua:2329
 msgid "Trade"
 msgstr ""
 
 #. [lua]: sow_menu_trade
-#: Settlers_of_Wesnoth/lua/main.lua:1931
+#: Settlers_of_Wesnoth/lua/main.lua:2330
 msgid ""
 "Select what trade type you want to engage in?\n"
 "%s"
 msgstr ""
 
 #. [lua]: sow_menu_trade
-#: Settlers_of_Wesnoth/lua/main.lua:1932
+#: Settlers_of_Wesnoth/lua/main.lua:2331
 msgid "Domestic trade (with other players)"
 msgstr ""
 
 #. [lua]: sow_menu_trade
-#: Settlers_of_Wesnoth/lua/main.lua:1932
+#: Settlers_of_Wesnoth/lua/main.lua:2331
 msgid "Trade overseas (with the bank)"
 msgstr ""
 
 #. [lua]: sow_set_goal
-#: Settlers_of_Wesnoth/lua/main.lua:1997
+#: Settlers_of_Wesnoth/lua/main.lua:2398
 msgid "Set Game Length"
 msgstr ""
 
 #. [lua]: sow_set_goal
-#: Settlers_of_Wesnoth/lua/main.lua:1998
+#: Settlers_of_Wesnoth/lua/main.lua:2399
 msgid ""
 "Please select the game's length (the amount of victory points to win; the "
-"default value is 10)"
+"default value is 10). If you have no idea, just choose that."
 msgstr ""
 
 #. [lua]: sow_set_goal
-#: Settlers_of_Wesnoth/lua/main.lua:2001
+#: Settlers_of_Wesnoth/lua/main.lua:2402
 msgid "Very Short (6 Victory Points)"
 msgstr ""
 
 #. [lua]: sow_set_goal
-#: Settlers_of_Wesnoth/lua/main.lua:2002
+#: Settlers_of_Wesnoth/lua/main.lua:2403
 msgid "Short (8 Victory Points)"
 msgstr ""
 
 #. [lua]: sow_set_goal
-#: Settlers_of_Wesnoth/lua/main.lua:2003
-msgid "Medium (10 Victory Points)"
+#: Settlers_of_Wesnoth/lua/main.lua:2404
+msgid "*Medium (10 Victory Points)"
 msgstr ""
 
 #. [lua]: sow_set_goal
-#: Settlers_of_Wesnoth/lua/main.lua:2004
+#: Settlers_of_Wesnoth/lua/main.lua:2405
 msgid "Long (12 Victory Points)"
 msgstr ""
 
 #. [lua]: sow_set_goal
-#: Settlers_of_Wesnoth/lua/main.lua:2005
+#: Settlers_of_Wesnoth/lua/main.lua:2406
 msgid "Very Long (14 Victory Points)"
 msgstr ""
 
 #. [lua]: sow_set_goal
-#: Settlers_of_Wesnoth/lua/main.lua:2006
+#: Settlers_of_Wesnoth/lua/main.lua:2407
 msgid ""
 "Infinite (The game is not automatically ended - there will never be a "
 "winner.)"
 msgstr ""
 
 #. [lua]: sow_set_goal
-#: Settlers_of_Wesnoth/lua/main.lua:2007
+#: Settlers_of_Wesnoth/lua/main.lua:2408
 msgid ""
 "turn limited (The game ends after given turn, player with most victory "
 "points wins.)"
 msgstr ""
 
 #. [lua]: sow_set_goal
-#: Settlers_of_Wesnoth/lua/main.lua:2008
+#: Settlers_of_Wesnoth/lua/main.lua:2409
 msgid "Enter Manually"
 msgstr ""
 
 #. [lua]: sow_victory_check
-#: Settlers_of_Wesnoth/lua/main.lua:2117
+#: Settlers_of_Wesnoth/lua/main.lua:2518
 msgid "Victory!"
 msgstr ""
 
 #. [lua]: sow_victory_check
-#: Settlers_of_Wesnoth/lua/main.lua:2118
+#: Settlers_of_Wesnoth/lua/main.lua:2519
 msgid ""
 "<span weight='bold'>%s wins the game with %i points!</span>\n"
 "\n"
@@ -773,21 +897,26 @@ msgid ""
 msgstr ""
 
 #. [lua]: sow_victory_check
-#: Settlers_of_Wesnoth/lua/main.lua:2119
+#: Settlers_of_Wesnoth/lua/main.lua:2520
 msgid ""
 "\n"
 "<span weight='bold'>Longest Road : </span>%i units long (%i victory points)"
 msgstr ""
 
 #. [lua]: sow_victory_check
-#: Settlers_of_Wesnoth/lua/main.lua:2120
+#: Settlers_of_Wesnoth/lua/main.lua:2521
 msgid ""
 "\n"
 "<span weight='bold'>Largest Army : </span>%i knights used (%i victory points)"
 msgstr ""
 
+#. [lua]: sow_tools.label
+#: Settlers_of_Wesnoth/lua/tools.lua:33
+msgid "placing label %s at (%u,%u) failed due to its length"
+msgstr ""
+
 #. [message]: speaker=narrator
-#: Settlers_of_Wesnoth/scenarios/sow_scenario.cfg:240
+#: Settlers_of_Wesnoth/scenarios/sow_scenario.cfg:253
 msgid ""
 "Settlers of Wesnoth is being played without the included era. This "
 "unfortunately means reduced playing comfort for everybody, but allows people "
@@ -799,38 +928,43 @@ msgid ""
 msgstr ""
 
 #. [message]: speaker=narrator
-#: Settlers_of_Wesnoth/scenarios/sow_scenario.cfg:273
+#: Settlers_of_Wesnoth/scenarios/sow_scenario.cfg:286
 msgid ""
 "Sorry - at least one player's version of Battle for Wesnoth is not recent "
 "enough thus this add-on wouldn't work correctly. Please get BfW "
 msgstr ""
 
+#. [message]: speaker=narrator
+#: Settlers_of_Wesnoth/scenarios/sow_scenario.cfg:286
+msgid " or greater. This is required of all joining players."
+msgstr ""
+
 #. [value]: condition=win
-#: Settlers_of_Wesnoth/scenarios/sow_scenario.cfg:321
+#: Settlers_of_Wesnoth/scenarios/sow_scenario.cfg:317
 msgid ""
 "Be the player who has the most victory points after the end of turn "
 "$sow_game_stats.leading_player.limit"
 msgstr ""
 
 #. [value]: condition=win
-#: Settlers_of_Wesnoth/scenarios/sow_scenario.cfg:330
+#: Settlers_of_Wesnoth/scenarios/sow_scenario.cfg:326
 msgid "Be the first player to accumulate $sow_game_stats.goal Victory Points"
 msgstr ""
 
-#. [objectives]
-#: Settlers_of_Wesnoth/scenarios/sow_scenario.cfg:337
+#. [sow_objectives]
+#: Settlers_of_Wesnoth/scenarios/sow_scenario.cfg:333
 msgid "Development your nascent settlement into a thriving colony!"
 msgstr ""
 
 #. [note]
-#: Settlers_of_Wesnoth/scenarios/sow_scenario.cfg:345
+#: Settlers_of_Wesnoth/scenarios/sow_scenario.cfg:340
 msgid ""
 "<span foreground='red'>Note that this dialog can also be closed by pressing "
 "the Esc or the return key.</span>"
 msgstr ""
 
 #. [message]: speaker=narrator
-#: Settlers_of_Wesnoth/scenarios/sow_scenario.cfg:484
+#: Settlers_of_Wesnoth/scenarios/sow_scenario.cfg:478
 msgid ""
 "Sorry - the client owning side $side_number|'s version of Settlers of "
 "Wesnoth doesn't match the version the host has, thus this add-on wouldn't "
@@ -838,12 +972,12 @@ msgid ""
 msgstr ""
 
 #. [message]: speaker=narrator
-#: Settlers_of_Wesnoth/scenarios/sow_scenario.cfg:756
+#: Settlers_of_Wesnoth/scenarios/sow_scenario.cfg:750
 msgid "Stolen resources!"
 msgstr ""
 
 #. [message]: speaker=narrator
-#: Settlers_of_Wesnoth/scenarios/sow_scenario.cfg:758
+#: Settlers_of_Wesnoth/scenarios/sow_scenario.cfg:752
 msgid ""
 "The robber was moved. You have $resources.ressources units of resources (out "
 "of at maximum $halfed_resources) in total - choose what to discard "
@@ -851,52 +985,52 @@ msgid ""
 msgstr ""
 
 #. [option]: speaker=narrator
-#: Settlers_of_Wesnoth/scenarios/sow_scenario.cfg:760
+#: Settlers_of_Wesnoth/scenarios/sow_scenario.cfg:754
 msgid "<span weight='bold'>Lumber</span>"
 msgstr ""
 
 #. [option]: speaker=narrator
-#: Settlers_of_Wesnoth/scenarios/sow_scenario.cfg:760
+#: Settlers_of_Wesnoth/scenarios/sow_scenario.cfg:754
 msgid "($resources.lumber available)"
 msgstr ""
 
 #. [option]: speaker=narrator
-#: Settlers_of_Wesnoth/scenarios/sow_scenario.cfg:766
+#: Settlers_of_Wesnoth/scenarios/sow_scenario.cfg:760
 msgid "<span weight='bold'>Grain</span>"
 msgstr ""
 
 #. [option]: speaker=narrator
-#: Settlers_of_Wesnoth/scenarios/sow_scenario.cfg:766
+#: Settlers_of_Wesnoth/scenarios/sow_scenario.cfg:760
 msgid "($resources.grain available)"
 msgstr ""
 
 #. [option]: speaker=narrator
-#: Settlers_of_Wesnoth/scenarios/sow_scenario.cfg:772
+#: Settlers_of_Wesnoth/scenarios/sow_scenario.cfg:766
 msgid "<span weight='bold'>Wool</span>"
 msgstr ""
 
 #. [option]: speaker=narrator
-#: Settlers_of_Wesnoth/scenarios/sow_scenario.cfg:772
+#: Settlers_of_Wesnoth/scenarios/sow_scenario.cfg:766
 msgid "($resources.wool available)"
 msgstr ""
 
 #. [option]: speaker=narrator
-#: Settlers_of_Wesnoth/scenarios/sow_scenario.cfg:778
+#: Settlers_of_Wesnoth/scenarios/sow_scenario.cfg:772
 msgid "($resources.brick available)"
 msgstr ""
 
 #. [option]: speaker=narrator
-#: Settlers_of_Wesnoth/scenarios/sow_scenario.cfg:778
+#: Settlers_of_Wesnoth/scenarios/sow_scenario.cfg:772
 msgid "<span weight='bold'>Brick</span>"
 msgstr ""
 
 #. [option]: speaker=narrator
-#: Settlers_of_Wesnoth/scenarios/sow_scenario.cfg:784
+#: Settlers_of_Wesnoth/scenarios/sow_scenario.cfg:778
 msgid "<span weight='bold'>Ore</span>"
 msgstr ""
 
 #. [option]: speaker=narrator
-#: Settlers_of_Wesnoth/scenarios/sow_scenario.cfg:784
+#: Settlers_of_Wesnoth/scenarios/sow_scenario.cfg:778
 msgid "($resources.ore available)"
 msgstr ""
 
@@ -1092,17 +1226,290 @@ msgstr ""
 msgid "Quick Unit Debug"
 msgstr ""
 
-#: Settlers_of_Wesnoth/utils/sow_help.cfg:4
-msgid "SETTLERS OF WESNOTH: RULES"
+#. [value]
+#: Settlers_of_Wesnoth/utils/sow_help.cfg:9
+msgid "<span color='green'><big>SETTLERS OF WESNOTH: RULES</big></span>"
 msgstr ""
 
-#: Settlers_of_Wesnoth/utils/sow_help.cfg:8
+#. [value]
+#: Settlers_of_Wesnoth/utils/sow_help.cfg:10
 msgid ""
-"Here is a comprehensive rule set for the Settlers of Wesnoth add-on. Please "
-"read this if this is your first time playing, especially if you are not "
-"player one: you will have some time to read 'till your turn comes up. You "
-"can access this menu anytime on your turn through the right-click context "
-"menu and also through the scenario objectives while it is not your turn."
+"<span color='yellow'>This is the help for Settlers of Wesnoth. It is "
+"strongly recommended to read this while and only while it is not your turn. "
+"Firstly, you have to do something during your turn wait, and secondly, the "
+"other players don't need to wait for you for so long. You can read this help "
+"out-of-turn either by selecting the leader units (in the top left of the "
+"map) and hovering your mouse cursor over their unit type name which shows up "
+"in the right side bar or by opening up the scenario objectives from the "
+"menu. The ladder has the disadvantage that it blocks the turn bell so you "
+"won't notice if it's your turn again.</span>\n"
+"<span font-style='italic'>Here is a comprehensive rule set for the Settlers "
+"of Wesnoth add-on. Please read this if this is your first time playing.</"
+"span>\n"
+"If you weren't aware, you don't actually have to be 8 to play Settlers of "
+"Wesnoth. In fact, the game is much more balanced with only four players. "
+"Don't use AIs.\n"
+"Feel free to report any bugs you may encounter or give any suggestion or "
+"comment you may have on the Settlers of Wesnoth development thread in the "
+"Multiplayer Development board on the Battle for Wesnoth Forums. This add-on "
+"is inspired by the awesome board game Settlers of Catan, was made by Dixie, "
+"with special thanks to Silene, Anonymissimus and Crendgrim and is currently "
+"maintained by Anonymissimus."
+msgstr ""
+
+#. [value]
+#: Settlers_of_Wesnoth/utils/sow_help.cfg:16
+msgid ""
+"<span color='yellow'>I OBJECTIVES</span>\n"
+"The goal will be set at game start by the first player to take a turn. It "
+"will probably be one of  eight (8) for a short game, ten (10) for a medium "
+"one, or twelve (12) for a long one. There are five ways to get victory "
+"points:\n"
+"<b>1)</b> Victory development cards, which are worth one point each and are "
+"only revealed at the end of the game. Be aware that if you are 4 players or "
+"less, there are only 5 of those cards, if you are 5 or 6, there are only 8, "
+"and if you are 7 or 8, there are 10. More on development cards later.\n"
+"<b>2)</b> The Longest road award, which is given to the first player to have "
+"a 5 units long road, and to the one to make the longest road thereafter. It "
+"is worth two victory points. Be aware that each player has a maximum of 15 "
+"road units, so the first player to make a 15 units long road is assured to "
+"keep the award.\n"
+"<b>3)</b> The Largest army award, which is given to the first player to have "
+"used 3 knight development cards, and to the one to have used the most "
+"afterward. It is also worth two points. Be aware that if you are 4 players "
+"or less, there are only 14 knight cards, if you are 5 or 6, there are 21 "
+"knight cards, and if you are 7 or 8, there are 28 knight cards. More info on "
+"development cards later.\n"
+"<b>4)</b> Build settlements. Each settlement is worth one victory point. "
+"They also allow you to collect more resources to build more stuff, "
+"settlements are the base of your economy! Note that you will begin the game "
+"with two free settlements: you begin play with two victory points! Be aware "
+"that each player has a maximum of 5 settlements. More on these later.\n"
+"<b>5)</b> Upgrade settlements to cities. Cities are not only worth two "
+"victory points, but they also allow you to collect two units of resource "
+"instead of just one. Be aware that each player has a maximum of 4 cities, "
+"but they do not count towards the maximum amount of settlements. More on "
+"these later."
+msgstr ""
+
+#. [value]
+#: Settlers_of_Wesnoth/utils/sow_help.cfg:25
+msgid ""
+"<span color='yellow'>II READING THE MAP</span>\n"
+"The map is generated randomly each game and depends on the number of "
+"players. Resources hexes are placed and assorted randomly with numbered "
+"tokens (see later). Ports are also distributed randomly amongst specific "
+"spots.\n"
+"Identifying what terrain produces what resource is essential basic "
+"information. Dry grass produces grain, green grass produces wool, hills "
+"produce brick, mountains produce ore, forests produce lumber and the desert "
+"produces nothing. Roads (paved or not) and water are not considered 'hexes' "
+"for the purpose of this game, and do not produce anything either. On the "
+"standard 4 players map, there are four forests, dry grass and green grass "
+"hexes, three hills and mountains ones, and a single desert hex, but this "
+"will vary with different maps. The way to produce/harvest resource units is "
+"to have its number come up and have a settlement or city next to it. More on "
+"this later.\n"
+"You can see your total amount of resource units at the left of the map, or "
+"by accessing either the trade or development right-click context menus "
+"anytime during your turn. Don't hoard them, though: having more than seven "
+"total resource units could hinder you more than it helps. See the Robber, "
+"later, for more information about this."
+msgstr ""
+
+#. [value]
+#: Settlers_of_Wesnoth/utils/sow_help.cfg:31
+msgid ""
+"<span color='yellow'>III COLLECTING RESOURCES</span>\n"
+"Save for the first two turns (see later), each player's turns begin "
+"invariably by rolling two six-sided die. The sum indicates what resource hex "
+"will produce resources this turn: numbered tokens are conveniently randomly "
+"assorted with every resource hex, save for the desert, since it produces "
+"nothing. The little dots later the numbers indicate the amount of chances on "
+"36 that a number comes out. While there are a single occurrence of the two "
+"(2) and twelve (12) token on the standard 4 players map, every other token "
+"will appear twice. This will be different on other maps. It is also "
+"impossible for two six (6)s or two eight (8)s to be adjacent to each other. "
+"You will also notice that seven, the number that is most likely to be "
+"rolled, has no token: rolling a seven activates the robber. Also note that "
+"the token that has the robber sitting on it will never produce resource, "
+"even if its number is rolled. More on this later.\n"
+"<span color='yellow'>IV BUILDING AND EXPANDING</span>\n"
+"Okay, so you are collecting resources. That's all fine and dandy, but how "
+"are you to transform these into victory points?\n"
+"The basic building unit is the road. It is relatively cheap: it only costs a "
+"unit of lumber and a unit of brick to make. Some development cards will even "
+"let you place free roads (more on them later)! It is especially important at "
+"the beginning of the game to expend. Well-placed roads can also be "
+"rewarding: the Longest Road award is a considerable boost to your score. "
+"Roads can only placed on resource hexes' side segments. That is, the brown, "
+"unpaved road tiles. You also can't place them just anywhere: every newly "
+"bought road unit must be connected with (adjacent to) a previously placed "
+"road segment (not considering the paved hex corners). Be aware that every "
+"player has a maximum of fifteen (15) road units. Think about it when placing "
+"your roads."
+msgstr ""
+
+#. [value]
+#: Settlers_of_Wesnoth/utils/sow_help.cfg:38
+msgid ""
+"After a few roads, the next thing to look for is a settlement. Settlements "
+"are an essential part of any nation, because it is through these that one "
+"will collect more resources. Each resource hex which has its number rolled "
+"will produce a unit of resource per settlement a player has adjacent to it. "
+"Settlements' price is much more steep than roads, however, as it demands "
+"great diversity: it costs a unit of wool, a unit of grain, a unit of lumber "
+"and a unit of brick. The placement of settlements is also restricted to "
+"resource hexes' corners, which are the paved road tiles, and must be "
+"connected to by roads. Also note that settlements cannot be placed on "
+"corners adjacent to other settlements or cities: the nearest settlement or "
+"city of any new settlement must be at least two corners (paved road tiles) "
+"away. It is also important knowing that building a settlement on a corner "
+"adjacent to a port (adjacent to a dock/bridge connecting to one) will claim "
+"that port for its player (more on ports later). Be aware that every "
+"settlement is worth one (1) victory point and that every player has a "
+"maximum of five (5) settlements.\n"
+"As you might have noticed, the maximum amount of points one can get from "
+"building roads and settlements is seven. Enter the cities, which are worth "
+"two victory points each. Cities must be built over settlements and have the "
+"highest cost of all: two units of grain and three units of ore. They also "
+"have an added benefit: each resource hex which has its number rolled will "
+"produce not one, but two units of resource per city a player has adjacent to "
+"it. This is in addition to any settlement that might also be present. Be "
+"aware that every player has a maximum of four (4) cities, but that they do "
+"not count toward the maximum amount of settlements one can own.\n"
+"While this covers all the units one can spend resources on, you can also use "
+"your resources to buy development cards. More on them later."
+msgstr ""
+
+#. [value]
+#: Settlers_of_Wesnoth/utils/sow_help.cfg:43
+msgid ""
+"A last word about buildings. The first two turns of a new game will be "
+"employed to place your first two settlements, and the roads that go along "
+"with them. There are a few special rules about these. First, the settlements "
+"obviously don't have to be connected to roads, as there are no roads yet. "
+"The placement of the second settlement is also especially important, as it "
+"will determine the resources you start with: you will have a unit of "
+"resource of each resource hex that are adjacent to your second settlement. "
+"Building it on the coast is therefore not recommended, as it will make you "
+"start the game with only two, if not one, unit(s) of resource. Also note "
+"that you cannot connect your first two roads together. Be aware that you "
+"place only one settlement and one road per turn (on the first two turns, "
+"anyway), and that should someone end his turn before placing the settlement "
+"or the road, they would be randomly placed, which is not recommended.\n"
+"<span color='yellow'>V DEVELOPMENT CARDS</span>\n"
+"The mysterious development cards, at long last! While relatively cheap (they "
+"cost a unit of grain, a unit of ore and a unit of wool), the new player will "
+"often feel uncomfortable around them, as there are so many other directly "
+"rewarding things to do: building a settlement or city is sure to give you a "
+"victory point, a development card less so. But they are useful jokers that "
+"one can keep in his hand. Do note that while you can buy as many development "
+"cards per turn as you wish, you can only use a single one every turn. Choose "
+"it carefully! There are five kind of development cards, and twenty-five (25) "
+"cards in total (that is, for 4 or less players; for 5 or 6 players, there "
+"are 38, and for 7 or 8, there are 50):\n"
+"<b>Victory</b> development cards are, simply put, bonus victory points "
+"hidden in your hand. They will only be revealed when you have enough points "
+"(counting them) at the end of your turn to win the game. Other players might "
+"suspect that you have one, since they will see how many total development "
+"cards you have, but they can never be sure whether it is a victory point or "
+"something else. Be aware that with 4 players or less, there are only five "
+"(5) victory development cards available in all, for 5 or 6 players there are "
+"8 and for 7 or 8 there are 10."
+msgstr ""
+
+#. [value]
+#: Settlers_of_Wesnoth/utils/sow_help.cfg:49
+msgid ""
+"<b>Knight</b> development cards have the same effect as rolling a seven (7) "
+"at the start of a turn: they activate the robber. More on him later. Note "
+"that rolling a seven does not prevent you from also using a knight. Using "
+"knight also have the side benefit of counting towards the Largest Army "
+"award, which is worth two victory points. Be aware that for 4 players or "
+"less, there are only fourteen (14) knight development cards available in the "
+"game, for 5 or 6 there are 21 and for 7 or 8 there are 28.\n"
+"<b>Road</b> Building development cards allow you to build two free roads "
+"this turn, saving you two units of lumber and two units of brick. Do note "
+"that this card doesn't allow you to go beyond your maximum amount of fifteen "
+"road units. If you have already topped this amount, this card is lost on "
+"you. Also note that if you use this card and fail to place one or both roads "
+"before ending your turn, they will be lost. For games containing 4 players "
+"or less, there are only two (2) Road Building development cards, while there "
+"are 3 for games with 5 or 6 players and 4 for 7 or 8 players.\n"
+"<b>Monopoly</b> development cards can be pretty useful if you lack a certain "
+"resource, especially if you know another player is collecting plenty of it. "
+"Using this card allows you to choose a type of resource and take all the "
+"units of that type the other players have in their hand. There are only two "
+"(2) Monopoly development cards in total for games with 4 players or less. "
+"For 5 or 6 players, there are 3, and for 7 or 8, there are 4.\n"
+"<b>Year of Plenty</b> development cards are very useful when you lack a few "
+"units of resource to build something important. Using one will allow you to "
+"instantly claim two units of resource from the bank, of the same type or "
+"not. There are only two (2) Year of Plenty development cards in the deck if "
+"4 players or less are present. For 5 or 6 players, there are 3, and for 7 or "
+"8, there are 4."
+msgstr ""
+
+#. [value]
+#: Settlers_of_Wesnoth/utils/sow_help.cfg:55
+msgid ""
+"<span color='yellow'>VI THE ROBBER</span>\n"
+"The Robber is a very important strategic element of the game, as it can foil "
+"someone's plans in more than one way. It is activated by either rolling a "
+"seven or by using a Knight development card (see above). The Robber will "
+"always start the game on the desert. Do note that while the robber is "
+"active, all other options save for the help and trades menus are disabled. "
+"You cannot continue your turn until you have moved the robber, but can use "
+"this as a mean of intimidation to do profitable trade deals.\n"
+"The first property of the robber is to negate the resource production of a "
+"resource hex. Another player is getting tons of bricks from a six-numbered "
+"hill? Sticking the robber there will prevent him from harvesting anything "
+"from it until it is moved elsewhere, even if the hex's number continually "
+"comes out.\n"
+"The second property of the robber, which can be a blessing as well as a "
+"curse, is an incentive to spend your resources rather then hoard them. "
+"Indeed, when the robber is moved (only if activated by chance, not by a "
+"card), every player who have more than seven resource cards will have to "
+"choose and discard half of them, rounded down.\n"
+"Last but not least, the third property of the robber is to steal a unit of "
+"resource from a city or settlement adjacent to its new spot on the account "
+"of the player who moved him. If you know someone has grain and you need "
+"some, moving the robber next to one of his settlement could  result in you "
+"stealing a unit of grain! If there are more than one player settled adjacent "
+"to the hex you move the robber to, you may choose from which player to steal "
+"from.\n"
+"Finally, be aware that if you somehow activated the robber and fail to move "
+"him before ending your turn, it will be moved randomly, and you will not "
+"benefit from stealing a resource unit from an adjacent settlement or city. "
+"Also note that the Robber HAS to be moved, you can't just put him on the hex "
+"it currently is again."
+msgstr ""
+
+#. [value]
+#: Settlers_of_Wesnoth/utils/sow_help.cfg:63
+msgid ""
+"<span color='yellow'>VII TRADING</span>\n"
+"Trade is an essential part of the game, as you will likely not succeed to "
+"collect the needed resource diversity to build roads and especially "
+"settlements or development cards if you abstain yourself from it. There are "
+"two kinds of trade: domestic or overseas.\n"
+"Domestic trade is trading on the island, i.e. with the other players. This "
+"is the part where your social and political skills kick in, and it can make "
+"or break your game. The player whose turn it is makes an offer and a demand, "
+"and every players are asked one after the other if they accept the deal or "
+"not. The first one to accept is the one who gets it. It is of course advised "
+"that politics are settled first through the chat to save time.\n"
+"Of course, it is not always possible to achieve a deal satisfactory to both "
+"parties with the other players. Hence the option of trading overseas, i.e. "
+"with the bank. Claiming ports is especially important in that regard as they "
+"can make you save a great deal of resources. There are two kind of ports: "
+"resource specific ports, which are marked with the according resource-icon, "
+"allow you to give two units of that resource for any single unit of "
+"resource, and non-specific ports, marked with a question mark (?), which "
+"allow you to give any three similar units of resource for any single unit. "
+"If you do not own any port, you can always give any four similar units of "
+"resource for any single one in return, but this is costly."
 msgstr ""
 
 #. [set_menu_item]: id=sow_menu_help
@@ -1111,42 +1518,42 @@ msgid "Help/Rules"
 msgstr ""
 
 #. [set_menu_item]: id=sow_menu_build_first_settle
-#: Settlers_of_Wesnoth/utils/sow_menus.cfg:115
+#: Settlers_of_Wesnoth/utils/sow_menus.cfg:112
 msgid "Build First Settlement"
 msgstr ""
 
 #. [set_menu_item]: id=sow_menu_build_second_settle
-#: Settlers_of_Wesnoth/utils/sow_menus.cfg:178
+#: Settlers_of_Wesnoth/utils/sow_menus.cfg:175
 msgid "Build Second Settlement"
 msgstr ""
 
 #. [set_menu_item]: id=sow_menu_build_first_road
-#: Settlers_of_Wesnoth/utils/sow_menus.cfg:239
+#: Settlers_of_Wesnoth/utils/sow_menus.cfg:236
 msgid "Build First Road"
 msgstr ""
 
 #. [set_menu_item]: id=sow_menu_build_second_road
-#: Settlers_of_Wesnoth/utils/sow_menus.cfg:326
+#: Settlers_of_Wesnoth/utils/sow_menus.cfg:323
 msgid "Build Second Road"
 msgstr ""
 
 #. [set_menu_item]: id=sow_menu_build_settle
-#: Settlers_of_Wesnoth/utils/sow_menus.cfg:408
+#: Settlers_of_Wesnoth/utils/sow_menus.cfg:405
 msgid "Build Settlement(L, G, W, B)"
 msgstr ""
 
 #. [set_menu_item]: id=sow_menu_build_city
-#: Settlers_of_Wesnoth/utils/sow_menus.cfg:501
+#: Settlers_of_Wesnoth/utils/sow_menus.cfg:498
 msgid "Improve to city (2 G, 3 O)"
 msgstr ""
 
 #. [set_menu_item]: id=sow_menu_build_road
-#: Settlers_of_Wesnoth/utils/sow_menus.cfg:568
+#: Settlers_of_Wesnoth/utils/sow_menus.cfg:565
 msgid "Build Road (L, B)"
 msgstr ""
 
 #. [set_menu_item]: id=sow_menu_robber
-#: Settlers_of_Wesnoth/utils/sow_menus.cfg:675
+#: Settlers_of_Wesnoth/utils/sow_menus.cfg:672
 msgid "Move Robber Here"
 msgstr ""
 
