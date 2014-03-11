@@ -6,10 +6,10 @@ msgstr ""
 "PO-Revision-Date: 2012-09-23 01:42+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
+"Language: gd\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: gd\n"
 
 #. [era]: id=era_sow
 #: Settlers_of_Wesnoth/_main.cfg:25
